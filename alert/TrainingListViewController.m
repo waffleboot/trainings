@@ -45,7 +45,9 @@ static NSString * const ADD_TRAINING_SEGUE  = @"AddTrainingViewController";
   if (!cell) {
     cell = [[TrainingListViewCell alloc] init];
   }
-  cell.name.text = [[[DataModel sharedInstance].trainings objectAtIndex:indexPath.row] name];
+  NSArray *trainings = [[DataModel sharedInstance] trainings];
+  Training *training = [trainings objectAtIndex:indexPath.row];
+  cell.name.text = training.name;
   return cell;
 }
 

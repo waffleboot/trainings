@@ -9,13 +9,15 @@
 @property (readonly) NSArray *trainings;
 - (Training*)addTrainingWithName:(NSString*)name;
 - (void)deleteTraining:(Training*)training;
+- (void)loadUserDefaultsTrainings;
+- (void)saveUserDefaultsTrainings;
 @end
 
 @interface DataModel (SharedInstance)
 + (instancetype)sharedInstance;
 @end
 
-@interface Training : NSObject
+@interface Training : NSObject <NSCoding>
 @property NSString *name;
 @property NSUInteger smallPeriod;
 @property NSUInteger largePeriod;
@@ -23,7 +25,7 @@
 - (Approach*)addApproachWithName:(NSString*)name;
 @end
 
-@interface Approach : NSObject
+@interface Approach : NSObject <NSCoding>
 @property NSString *name;
 @property (readonly) NSArray *exercises;
 @property (weak) Training *training;

@@ -17,9 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [[DataModel sharedInstance] addTrainingWithName:@"one"];
-  [[DataModel sharedInstance] addTrainingWithName:@"two"];
-  [[DataModel sharedInstance] addTrainingWithName:@"three"];
+//  [[DataModel sharedInstance] addTrainingWithName:@"one"];
+//  [[DataModel sharedInstance] addTrainingWithName:@"two"];
+//  [[DataModel sharedInstance] addTrainingWithName:@"three"];
+  [[DataModel sharedInstance] loadUserDefaultsTrainings];
   return YES;
 }
 

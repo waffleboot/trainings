@@ -97,10 +97,12 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 
 - (IBAction)onLargePeriod:(UITextField *)sender {
   self.training.largePeriod = [sender.text integerValue];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
 - (IBAction)onSmallPeriod:(UITextField *)sender {
   self.training.smallPeriod = [sender.text integerValue];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
 @end
