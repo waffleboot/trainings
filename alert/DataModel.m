@@ -51,6 +51,8 @@
 - (instancetype)init {
   if (self = [super init]) {
     self.mutableApproaches = [[NSMutableArray alloc] init];
+    self.smallPeriod = 3;
+    self.largePeriod = 7;
   }
   return self;
 }

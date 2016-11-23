@@ -2,6 +2,7 @@
 #import "TrainingViewController.h"
 #import "ExerciseViewController.h"
 #import "AddApproachViewController.h"
+#import "TimerViewController.h"
 #import "DataModel.h"
 #import "const.h"
 
@@ -34,8 +35,8 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.name.text = self.training.name;
-  self.largePeriod.text = [self.training.largePeriod stringValue];
-  self.smallPeriod.text = [self.training.smallPeriod stringValue];
+  self.largePeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.largePeriod] stringValue];
+  self.smallPeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.smallPeriod] stringValue];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(refresh)
                                                name:NOTIFICATION_UPDATE
@@ -86,15 +87,20 @@ static NSString * const TIMER_SEGUE = @"startTimer";
       AddApproachViewController *dst = segue.destinationViewController;
       dst.training = self.training;
     }
+  } else if ([segue.identifier isEqualToString:TIMER_SEGUE]) {
+    if ([segue.destinationViewController class] == [TimerViewController class]) {
+      TimerViewController *dst = segue.destinationViewController;
+      dst.training = self.training;
+    }
   }
 }
 
 - (IBAction)onLargePeriod:(UITextField *)sender {
-  self.training.largePeriod = [NSNumber numberWithInteger:[sender.text integerValue]];
+  self.training.largePeriod = [sender.text integerValue];
 }
 
 - (IBAction)onSmallPeriod:(UITextField *)sender {
-  self.training.smallPeriod = [NSNumber numberWithInteger:[sender.text integerValue]];
+  self.training.smallPeriod = [sender.text integerValue];
 }
 
 @end

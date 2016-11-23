@@ -17,8 +17,8 @@
 
 @interface Training : NSObject
 @property NSString *name;
-@property NSNumber *smallPeriod;
-@property NSNumber *largePeriod;
+@property NSUInteger smallPeriod;
+@property NSUInteger largePeriod;
 @property (readonly) NSArray *approaches;
 - (Approach*)addApproachWithName:(NSString*)name;
 @end

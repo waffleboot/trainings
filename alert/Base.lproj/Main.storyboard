@@ -147,7 +147,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rMT-zb-SVn">
                                                 <rect key="frame" x="239" y="0.0" width="120" height="56"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REP-6a-AJp">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REP-6a-AJp">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="SEC-bL-AQv"/>
@@ -157,7 +157,7 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pS-3L-xXO">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pS-3L-xXO">
                                                         <rect key="frame" x="0.0" y="32" width="120" height="24"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -216,8 +216,45 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OJc-i1-Hx0">
                                 <rect key="frame" x="8" y="72" width="359" height="587"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-lT-KCK" userLabel="buttons">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-pz-fP4" userLabel="run" customClass="RoundButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="36"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Запуск">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="runTraining:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="5Vp-dK-pBB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eox-rU-9Sr" userLabel="add">
+                                                <rect key="frame" x="279" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="X4D-TG-c2G"/>
+                                                    <constraint firstAttribute="width" constant="36" id="qjJ-Ud-3Qr"/>
+                                                </constraints>
+                                                <state key="normal" image="plus">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addApproach:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="pmr-9s-Row"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izk-KR-mha" userLabel="options">
+                                                <rect key="frame" x="323" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="Inc-AK-o6u"/>
+                                                    <constraint firstAttribute="height" constant="36" id="fRx-we-pie"/>
+                                                </constraints>
+                                                <state key="normal" image="options"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название тренировки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-Bx-MQY" userLabel="name">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="32"/>
+                                        <rect key="frame" x="0.0" y="44" width="359" height="32"/>
                                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Hki-Np-s2g"/>
@@ -227,10 +264,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-26-aUQ" userLabel="table stack">
-                                        <rect key="frame" x="0.0" y="40" width="359" height="443"/>
+                                        <rect key="frame" x="0.0" y="84" width="359" height="439"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-kc-uTI" userLabel="table">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="403"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="439"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" id="muS-oE-Uja" customClass="TrainingViewCell">
@@ -264,25 +301,10 @@
                                                     <outlet property="delegate" destination="hPZ-lH-Wuj" id="kSc-tL-SqJ"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eox-rU-9Sr" userLabel="add" customClass="RoundButton">
-                                                <rect key="frame" x="0.0" y="411" width="359" height="32"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="ZWX-QG-d1l"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                                <state key="normal" title="Добавить подход">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addApproach:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="pmr-9s-Row"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="meg-ub-tBJ">
-                                        <rect key="frame" x="0.0" y="491" width="359" height="56"/>
+                                        <rect key="frame" x="0.0" y="531" width="359" height="56"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-5o-eMT" userLabel="label">
                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="56"/>
@@ -304,7 +326,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-AX-4bf" userLabel="value">
                                                 <rect key="frame" x="239" y="0.0" width="120" height="56"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-8w-9rN" userLabel="largeValue">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-8w-9rN" userLabel="largeValue">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="AUw-3b-XLa"/>
@@ -317,7 +339,7 @@
                                                             <action selector="onLargePeriod:" destination="hPZ-lH-Wuj" eventType="editingDidEnd" id="Kng-QK-rb3"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-Fn-hli" userLabel="smallValue">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-Fn-hli" userLabel="smallValue">
                                                         <rect key="frame" x="0.0" y="32" width="120" height="24"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -328,37 +350,6 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-lT-KCK" userLabel="buttons">
-                                        <rect key="frame" x="0.0" y="555" width="359" height="32"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4om-V0-asg" userLabel="delete" customClass="RoundButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="32"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                                <state key="normal" title="Удалить">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="deleteTraining:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="2Li-w1-oGc"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-pz-fP4" userLabel="run" customClass="RoundButton">
-                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="32"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="Usf-z1-gxJ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="Запуск">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="runTraining:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="5Vp-dK-pBB"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -393,7 +384,7 @@
         <!--Timer-->
         <scene sceneID="Ycc-tQ-Ksb">
             <objects>
-                <viewController id="IXN-jL-BN3" userLabel="Timer" sceneMemberID="viewController">
+                <viewController id="IXN-jL-BN3" userLabel="Timer" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ryo-qR-uqb"/>
                         <viewControllerLayoutGuide type="bottom" id="qkM-JL-uF7"/>
@@ -401,8 +392,25 @@
                     <view key="view" contentMode="scaleToFill" id="vwk-xY-BE3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T3-HY-dzQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3T3-HY-dzQ" firstAttribute="top" secondItem="Ryo-qR-uqb" secondAttribute="bottom" id="Jym-7f-oBX"/>
+                            <constraint firstAttribute="trailing" secondItem="3T3-HY-dzQ" secondAttribute="trailing" id="mqF-hq-EQD"/>
+                            <constraint firstItem="qkM-JL-uF7" firstAttribute="top" secondItem="3T3-HY-dzQ" secondAttribute="bottom" id="p4w-Le-sdI"/>
+                            <constraint firstItem="3T3-HY-dzQ" firstAttribute="leading" secondItem="vwk-xY-BE3" secondAttribute="leading" id="r9S-x3-w9W"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="3T3-HY-dzQ" id="Kwt-Lr-Odu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW0-5L-EDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -748,5 +756,6 @@
     </scenes>
     <resources>
         <image name="options" width="449" height="450"/>
+        <image name="plus" width="255" height="256"/>
     </resources>
 </document>

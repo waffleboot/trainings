@@ -15,8 +15,8 @@
 
 - (IBAction)addTraining:(UIButton *)sender {
   Training *training = [[DataModel sharedInstance] addTrainingWithName:self.name.text];
-  training.smallPeriod = [NSNumber numberWithInteger:[self.smallPeriod.text integerValue]];
-  training.largePeriod = [NSNumber numberWithInteger:[self.largePeriod.text integerValue]];
+  training.smallPeriod = [self.smallPeriod.text integerValue];
+  training.largePeriod = [self.largePeriod.text integerValue];
   [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UPDATE object:nil];
 
   TrainingViewController *vc1 = [self.storyboard

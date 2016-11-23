@@ -22,6 +22,7 @@
 		F59068AD1DE5B01B00144593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59068AB1DE5B01B00144593 /* Main.storyboard */; };
 		F59068B01DE5B0D800144593 /* AddApproachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068AF1DE5B0D800144593 /* AddApproachViewController.m */; };
 		F59068B31DE5B5BE00144593 /* const.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068B21DE5B5BE00144593 /* const.m */; };
+		F59068B61DE5C4AF00144593 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068B51DE5C4AF00144593 /* TimerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		F59068AF1DE5B0D800144593 /* AddApproachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddApproachViewController.m; sourceTree = "<group>"; };
 		F59068B11DE5B52A00144593 /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
 		F59068B21DE5B5BE00144593 /* const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = const.m; sourceTree = "<group>"; };
+		F59068B41DE5C4AF00144593 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		F59068B51DE5C4AF00144593 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				F59068AF1DE5B0D800144593 /* AddApproachViewController.m */,
 				F59068B11DE5B52A00144593 /* const.h */,
 				F59068B21DE5B5BE00144593 /* const.m */,
+				F59068B41DE5C4AF00144593 /* TimerViewController.h */,
+				F59068B51DE5C4AF00144593 /* TimerViewController.m */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				F590687E1DE5314800144593 /* ExerciseViewController.m in Sources */,
 				F59068B01DE5B0D800144593 /* AddApproachViewController.m in Sources */,
 				F5690A6C1DE40D4E00D6D505 /* AppDelegate.m in Sources */,
+				F59068B61DE5C4AF00144593 /* TimerViewController.m in Sources */,
 				F59068811DE5371400144593 /* RoundButton.m in Sources */,
 				F590687B1DE530B300144593 /* TrainingViewController.m in Sources */,
 				F59068B31DE5B5BE00144593 /* const.m in Sources */,
