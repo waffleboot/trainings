@@ -22,6 +22,7 @@
 @property NSUInteger smallPeriod;
 @property NSUInteger largePeriod;
 @property (readonly) NSArray *approaches;
+@property (readonly) NSUInteger maxRound;
 - (Approach*)addApproachWithName:(NSString*)name;
 @end
 
@@ -30,4 +31,5 @@
 @property (readonly) NSArray *exercises;
 @property (weak) Training *training;
 - (void)addExercise:(NSUInteger)count;
+- (NSUInteger)exercisesCountForRound:(NSUInteger)round;
 @end

@@ -106,6 +106,17 @@
   return approach;
 }
 
+- (NSUInteger)maxRound {
+  NSUInteger maxRound = 0;
+  for (int i = 0; i < self.approaches.count; ++i) {
+    Approach *approach = [self.approaches objectAtIndex:i];
+    NSArray *exercises = approach.exercises;
+    NSUInteger count = exercises.count;
+    maxRound = MAX(maxRound, count);
+  }
+  return maxRound;
+}
+
 @end
 
 @interface Approach ()
@@ -113,6 +124,17 @@
 @end
 
 @implementation Approach
+
+- (NSInteger)exercisesCountForRound:(NSUInteger)round {
+  NSArray *exercises = self.exercises;
+  NSUInteger count = exercises.count;
+  if (round < count) {
+    NSNumber *count = [exercises objectAtIndex:round];
+    return [count unsignedIntegerValue];
+  } else {
+    return -1;
+  }
+}
 
 - (instancetype)init {
   if (self = [super init]) {
