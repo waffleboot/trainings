@@ -24,6 +24,7 @@
 @property (readonly) NSArray *approaches;
 @property (readonly) NSUInteger maxRound;
 - (Approach*)addApproachWithName:(NSString*)name;
+- (void)deleteApproach:(Approach*)approach;
 @end
 
 @interface Approach : NSObject <NSCoding>
@@ -31,5 +32,6 @@
 @property (readonly) NSArray *exercises;
 @property (weak) Training *training;
 - (void)addExercise:(NSUInteger)count;
+- (void)removeExercise:(NSUInteger)index;
 - (NSUInteger)exercisesCountForRound:(NSUInteger)round;
 @end

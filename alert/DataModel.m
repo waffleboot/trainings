@@ -97,6 +97,11 @@
   return self.mutableApproaches;
 }
 
+- (void)deleteApproach:(Approach *)approach {
+  [self.mutableApproaches removeObject:approach];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
+}
+
 - (Approach *)addApproachWithName:(NSString *)name {
   Approach *approach = [[Approach alloc] init];
   approach.name = name;
@@ -161,6 +166,11 @@
 
 - (NSArray *)exercises {
   return self.mutableExercises;
+}
+
+- (void)removeExercise:(NSUInteger)index {
+  [self.mutableExercises removeObjectAtIndex:index];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
 - (void)addExercise:(NSUInteger)count {
