@@ -2,42 +2,11 @@
 #import "TrainingListViewController.h"
 #import "TrainingViewController.h"
 #import "DataModel.h"
-#import "const.h"
-
-@interface TrainingListViewController () <UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *table;
-@end
 
 @implementation TrainingListViewController
 
-static NSString * const ADD_TRAINING_SEGUE  = @"AddTrainingViewController";
-
-- (IBAction)addTraining:(UIButton *)sender {
-  [self performSegueWithIdentifier:ADD_TRAINING_SEGUE sender:nil];
-}
-
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(refresh)
-                                               name:NOTIFICATION_UPDATE
-                                             object:nil];
-}
-
-- (void)dealloc {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)refresh {
-  [self.table reloadData];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [DataModel sharedInstance].trainings.count;
+  return DataModel.sharedInstance.trainings.count;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,34 +19,41 @@ static NSString * const ADD_TRAINING_SEGUE  = @"AddTrainingViewController";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  TrainingListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingListViewCell"];
-  if (!cell) {
-    cell = [[TrainingListViewCell alloc] init];
-  }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingListViewCell"];
   NSArray *trainings = [[DataModel sharedInstance] trainings];
   Training *training = [trainings objectAtIndex:indexPath.row];
-  cell.name.text = training.name;
+  cell.textLabel.text = training.name;
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Training *training = [[DataModel sharedInstance].trainings objectAtIndex:indexPath.row];
-  [self performSegueWithIdentifier:TRAINING_VIEW_SEGUE sender:training];
-}
+  [self performSegueWithIdentifier:@"TrainingViewController" sender:training];
+}*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue.identifier isEqualToString:TRAINING_VIEW_SEGUE]) {
-    if ([segue.destinationViewController class] == [TrainingViewController class]) {
-      if ([sender class] == [Training class]) {
-        TrainingViewController *dst = segue.destinationViewController;
-        dst.training = sender;
-      }
-    }
+  if ([segue.identifier isEqualToString:@"TrainingViewController"]) {
+    //UINavigationController *navigationController = segue.destinationViewController;
+    //TrainingViewController *trainingViewController = [[navigationController viewControllers] objectAtIndex:0];
+    TrainingViewController *trainingViewController = segue.destinationViewController;
+    UITableViewCell *cell = sender;
+    trainingViewController.training = [DataModel.sharedInstance.trainings objectAtIndex:0];
+  } else if ([segue.identifier isEqualToString:@"AddTraining"]) {
+    UINavigationController *navigationController = segue.destinationViewController;
+    AddTrainingViewController *addTrainingViewController = [[navigationController viewControllers] objectAtIndex:0];
+    addTrainingViewController.delegate = self;
   }
 }
 
-@end
+- (void)addTrainingViewControllerDidCancel:(AddTrainingViewController *)controller {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
 
-@implementation TrainingListViewCell
+- (void)addTrainingViewController:(AddTrainingViewController *)controller didAddTraining:(Training *)training {
+  [[DataModel sharedInstance] addTraining:training];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:DataModel.sharedInstance.trainings.count - 1 inSection:0];
+  [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

@@ -40,12 +40,9 @@
   return self.mutableTrainings;
 }
 
-- (Training *)addTrainingWithName:(NSString *)name {
-  Training *training = [[Training alloc] init];
-  training.name = name;
+- (void)addTraining:(Training *)training {
   [self.mutableTrainings addObject:training];
   [self saveUserDefaultsTrainings];
-  return training;
 }
 
 - (void)deleteTraining:(Training *)training {

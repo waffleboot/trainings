@@ -7,7 +7,7 @@
 
 @interface DataModel : NSObject
 @property (readonly) NSArray *trainings;
-- (Training*)addTrainingWithName:(NSString*)name;
+- (void)addTraining:(Training *)training;
 - (void)deleteTraining:(Training*)training;
 - (void)loadUserDefaultsTrainings;
 - (void)saveUserDefaultsTrainings;

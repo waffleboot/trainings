@@ -1,10 +1,6 @@
 
 #import <UIKit/UIKit.h>
+#import "AddTrainingViewController.h"
 
-@interface TrainingListViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@interface TrainingListViewController : UITableViewController <AddTrainingViewControllerDelegate>
 @end
-
-@interface TrainingListViewController : UIViewController
-@end
-

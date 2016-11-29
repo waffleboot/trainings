@@ -9,88 +9,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TrainingList-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Тренировки-->
+        <scene sceneID="5h6-MH-gUu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" userLabel="TrainingList" customClass="TrainingListViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="62o-id-OF0" customClass="TrainingListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ohJ-XU-YX7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PGP-TC-OmT">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-xt-S0C" userLabel="table">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="547"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingListViewCell" id="gVe-jB-8or" customClass="TrainingListViewCell">
-                                                <rect key="frame" x="0.0" y="28" width="359" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVe-jB-8or" id="YFN-7l-Eql">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5S-Wp-HkA">
-                                                            <rect key="frame" x="27" y="4" width="250" height="27"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="name" destination="d5S-Wp-HkA" id="MzJ-HU-OZN"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <sections/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="NIs-12-xBD"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="8nQ-Si-dqO"/>
-                                        </connections>
-                                    </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7D-g7-5cj" userLabel="button" customClass="RoundButton">
-                                        <rect key="frame" x="0.0" y="555" width="359" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="aK4-BN-IDu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                        <state key="normal" title="Добавить тренировку">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addTraining:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1JV-HQ-Jnm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="PGP-TC-OmT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="LOz-dW-XHe"/>
-                            <constraint firstAttribute="trailing" secondItem="PGP-TC-OmT" secondAttribute="trailing" constant="8" id="fQM-r6-jtx"/>
-                            <constraint firstItem="PGP-TC-OmT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jlF-TG-XHF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PGP-TC-OmT" secondAttribute="bottom" constant="8" id="yQG-5d-qZ7"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Тренировки" id="t6n-Sr-RNZ"/>
-                    <connections>
-                        <outlet property="table" destination="aXa-xt-S0C" id="GWo-Gc-nDj"/>
-                        <segue destination="hPZ-lH-Wuj" kind="show" identifier="TrainingViewController" id="3ZS-Mi-BN5"/>
-                        <segue destination="r8u-j4-eKi" kind="show" identifier="AddTrainingViewController" id="m3d-2c-w3y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TrainingListViewCell" textLabel="gj4-G4-YCg" style="IBUITableViewCellStyleDefault" id="vYy-Ya-aJe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYy-Ya-aJe" id="Bur-iD-Nkc">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gj4-G4-YCg">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hPZ-lH-Wuj" kind="show" identifier="TrainingViewController" id="amp-Tr-78u"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="62o-id-OF0" id="oBs-9U-5ne"/>
+                            <outlet property="delegate" destination="62o-id-OF0" id="jgw-kp-PI6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Тренировки" id="AVE-U9-tY0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="71J-Lj-w8i">
+                            <connections>
+                                <segue destination="hgY-9i-QTJ" kind="presentation" identifier="AddTraining" id="XXO-Bw-XSY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y74-zG-Cur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1058" y="123"/>
         </scene>
         <!--AddTraining-->
         <scene sceneID="sfX-Y4-qcf">
@@ -105,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="642-5i-1x6">
-                                <rect key="frame" x="8" y="64" width="359" height="164"/>
+                                <rect key="frame" x="8" y="64" width="359" height="124"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tzN-E5-joI">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
@@ -167,20 +131,6 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maR-MP-kIF" customClass="RoundButton">
-                                        <rect key="frame" x="0.0" y="132" width="359" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="uU5-Wn-1cM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Создать тренировку">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addTraining:" destination="r8u-j4-eKi" eventType="touchUpInside" id="zf1-uT-JJj"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -191,6 +141,18 @@
                             <constraint firstItem="642-5i-1x6" firstAttribute="top" secondItem="I0M-uT-cd1" secondAttribute="bottom" id="kLP-mt-4ab"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Новая тренировка" id="FXE-si-4y9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="t9J-K9-PSe">
+                            <connections>
+                                <action selector="cancel:" destination="r8u-j4-eKi" id="M5M-3j-vKD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0CJ-ok-7LH">
+                            <connections>
+                                <action selector="done:" destination="r8u-j4-eKi" id="t6i-GE-0LC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="largePeriod" destination="REP-6a-AJp" id="Srp-hi-C9O"/>
                         <outlet property="name" destination="Z0F-FG-fOc" id="gqS-Ij-3xH"/>
@@ -199,12 +161,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-o9-NLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885.60000000000002" y="992.65367316341838"/>
+            <point key="canvasLocation" x="1852" y="921.58920539730138"/>
         </scene>
-        <!--Training-->
+        <!--Подходы-->
         <scene sceneID="aGa-Vy-8hV">
             <objects>
-                <viewController storyboardIdentifier="TrainingViewController" automaticallyAdjustsScrollViewInsets="NO" id="hPZ-lH-Wuj" userLabel="Training" customClass="TrainingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingViewController" automaticallyAdjustsScrollViewInsets="NO" id="hPZ-lH-Wuj" userLabel="Подходы" customClass="TrainingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R2t-b6-7Ct"/>
                         <viewControllerLayoutGuide type="bottom" id="c0i-3E-piZ"/>
@@ -367,6 +329,9 @@
                             <constraint firstItem="OJc-i1-Hx0" firstAttribute="top" secondItem="R2t-b6-7Ct" secondAttribute="bottom" constant="8" id="ylh-o8-oOb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Подходы" id="9Mf-po-jHR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ngc-DD-hRz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="largePeriod" destination="GZ2-8w-9rN" id="fdy-bl-rxx"/>
                         <outlet property="name" destination="3lt-Bx-MQY" id="iMQ-H3-uFZ"/>
@@ -493,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW0-5L-EDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="977.36131934032994"/>
+            <point key="canvasLocation" x="2816.8000000000002" y="977.36131934032994"/>
         </scene>
         <!--Done-->
         <scene sceneID="zjh-lf-VYs">
@@ -581,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBD-4H-fjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2748" y="922.48875562218893"/>
+            <point key="canvasLocation" x="3687.1999999999998" y="922.48875562218893"/>
         </scene>
         <!--Exercise-->
         <scene sceneID="M0i-9T-Rtf">
@@ -846,10 +811,10 @@
             </objects>
             <point key="canvasLocation" x="2837.5999999999999" y="25.637181409295355"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--MainNav-->
         <scene sceneID="Ao4-Yo-yfd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gE-cI-6fR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gE-cI-6fR" userLabel="MainNav" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="95E-gF-DBv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -857,12 +822,30 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ub2-fQ-gol"/>
+                        <segue destination="62o-id-OF0" kind="relationship" relationship="rootViewController" id="bQm-6T-V0P"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9Y-JB-OoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--AddTrainingNav-->
+        <scene sceneID="aNi-AO-Ig3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgY-9i-QTJ" userLabel="AddTrainingNav" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MS9-nT-vTs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r8u-j4-eKi" kind="relationship" relationship="rootViewController" id="0gK-Z7-uyh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVQ-OR-lD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="922"/>
         </scene>
     </scenes>
     <resources>
