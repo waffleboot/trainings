@@ -26,18 +26,13 @@
   return cell;
 }
 
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  Training *training = [[DataModel sharedInstance].trainings objectAtIndex:indexPath.row];
-  [self performSegueWithIdentifier:@"TrainingViewController" sender:training];
-}*/
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"TrainingViewController"]) {
-    //UINavigationController *navigationController = segue.destinationViewController;
-    //TrainingViewController *trainingViewController = [[navigationController viewControllers] objectAtIndex:0];
-    TrainingViewController *trainingViewController = segue.destinationViewController;
     UITableViewCell *cell = sender;
-    trainingViewController.training = [DataModel.sharedInstance.trainings objectAtIndex:0];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Training *training = [DataModel.sharedInstance.trainings objectAtIndex:indexPath.row];
+    TrainingViewController *trainingViewController = segue.destinationViewController;
+    trainingViewController.training = training;
   } else if ([segue.identifier isEqualToString:@"AddTraining"]) {
     UINavigationController *navigationController = segue.destinationViewController;
     AddTrainingViewController *addTrainingViewController = [[navigationController viewControllers] objectAtIndex:0];
