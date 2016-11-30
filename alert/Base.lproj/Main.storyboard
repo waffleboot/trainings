@@ -28,7 +28,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gj4-G4-YCg">
                                             <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -232,30 +232,22 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="439"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" id="muS-oE-Uja" customClass="TrainingViewCell">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" textLabel="O1o-ZC-Ni3" style="IBUITableViewCellStyleDefault" id="muS-oE-Uja">
                                                         <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="muS-oE-Uja" id="2Jv-hR-dLe">
                                                             <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfM-XS-S7x">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1o-ZC-Ni3">
+                                                                    <rect key="frame" x="15" y="0.0" width="309" height="43"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="CfM-XS-S7x" secondAttribute="trailing" id="9Of-L9-j9y"/>
-                                                                <constraint firstAttribute="bottom" secondItem="CfM-XS-S7x" secondAttribute="bottom" id="Brw-lh-YEJ"/>
-                                                                <constraint firstItem="CfM-XS-S7x" firstAttribute="top" secondItem="2Jv-hR-dLe" secondAttribute="top" id="cTO-bz-V4B"/>
-                                                                <constraint firstItem="CfM-XS-S7x" firstAttribute="leading" secondItem="2Jv-hR-dLe" secondAttribute="leading" id="jpp-K2-jhp"/>
-                                                            </constraints>
                                                         </tableViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="label" destination="CfM-XS-S7x" id="616-5B-f5x"/>
-                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -797,6 +789,9 @@
                             <constraint firstAttribute="trailing" secondItem="yBI-tL-Qd6" secondAttribute="trailing" constant="8" id="Uhj-ho-bIK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Упражнения" id="ylD-M7-PP3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xdo-vw-0pf"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="approachName" destination="8He-g4-Hm6" id="pIE-MF-njk"/>
                         <outlet property="rangeRepeatFrom" destination="WEG-tK-hE7" id="Wfi-ZG-IgE"/>

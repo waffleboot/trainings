@@ -56,12 +56,9 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  TrainingViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingViewCell"];
-  if (!cell) {
-    cell = [[TrainingViewCell alloc] init];
-  }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingViewCell"];
   Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
-  cell.label.text = approach.name;
+  cell.textLabel.text = approach.name;
   return cell;
 }
 
@@ -108,9 +105,5 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   self.training.smallPeriod = [sender.text integerValue];
   [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
-
-@end
-
-@implementation TrainingViewCell
 
 @end
