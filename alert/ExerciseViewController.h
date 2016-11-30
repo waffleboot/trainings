@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
+#import "AddExerciseViewController.h"
 
 @interface ExerciseViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *value;
 @property (weak, nonatomic) IBOutlet UILabel *pos;
 @end
 
-@interface ExerciseViewController : UIViewController
+@interface ExerciseViewController : UITableViewController <AddExerciseViewControllerDelegate>
 @property Approach *approach;
 @end

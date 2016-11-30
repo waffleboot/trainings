@@ -70,19 +70,17 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
   [self performSegueWithIdentifier:EXERCISE_SEGUE sender:approach];
-}
+}*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:EXERCISE_SEGUE]) {
-    if ([segue.destinationViewController class] == [ExerciseViewController class]) {
-      if ([sender class] == [Approach class]) {
-        ExerciseViewController *dst = segue.destinationViewController;
-        dst.approach = sender;
-      }
-    }
+    NSIndexPath *indexPath = [self.table indexPathForCell:sender];
+    Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
+    ExerciseViewController *dst = segue.destinationViewController;
+    dst.approach = approach;
   } else if ([segue.identifier isEqualToString:ADD_APPROACH_SEGUE]) {
     if ([segue.destinationViewController class] == [AddApproachViewController class]) {
       AddApproachViewController *dst = segue.destinationViewController;

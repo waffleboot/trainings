@@ -13,6 +13,7 @@
 		F5690A6F1DE40D4E00D6D505 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5690A6E1DE40D4E00D6D505 /* ViewController.m */; };
 		F5690A741DE40D4E00D6D505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5690A731DE40D4E00D6D505 /* Assets.xcassets */; };
 		F5690A771DE40D4E00D6D505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5690A751DE40D4E00D6D505 /* LaunchScreen.storyboard */; };
+		F56E57181DEEA743003E250F /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56E57171DEEA743003E250F /* AddExerciseViewController.m */; };
 		F59068721DE5001900144593 /* MyCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068711DE5001900144593 /* MyCellTableViewCell.m */; };
 		F59068751DE52B6100144593 /* TrainingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068741DE52B6100144593 /* TrainingListViewController.m */; };
 		F590687B1DE530B300144593 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F590687A1DE530B300144593 /* TrainingViewController.m */; };
@@ -39,6 +40,8 @@
 		F5690A731DE40D4E00D6D505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5690A761DE40D4E00D6D505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5690A781DE40D4E00D6D505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F56E57161DEEA743003E250F /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
+		F56E57171DEEA743003E250F /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
 		F59068701DE5001900144593 /* MyCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCellTableViewCell.h; sourceTree = "<group>"; };
 		F59068711DE5001900144593 /* MyCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCellTableViewCell.m; sourceTree = "<group>"; };
 		F59068731DE52B6100144593 /* TrainingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingListViewController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				F59068B21DE5B5BE00144593 /* const.m */,
 				F59068B41DE5C4AF00144593 /* TimerViewController.h */,
 				F59068B51DE5C4AF00144593 /* TimerViewController.m */,
+				F56E57161DEEA743003E250F /* AddExerciseViewController.h */,
+				F56E57171DEEA743003E250F /* AddExerciseViewController.m */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				F59068B61DE5C4AF00144593 /* TimerViewController.m in Sources */,
 				F59068811DE5371400144593 /* RoundButton.m in Sources */,
 				F590687B1DE530B300144593 /* TrainingViewController.m in Sources */,
+				F56E57181DEEA743003E250F /* AddExerciseViewController.m in Sources */,
 				F59068B31DE5B5BE00144593 /* const.m in Sources */,
 				F59068751DE52B6100144593 /* TrainingListViewController.m in Sources */,
 				F5690A691DE40D4E00D6D505 /* main.m in Sources */,
