@@ -95,7 +95,7 @@
                             <outlet property="delegate" destination="yyn-1y-9nH" id="nGb-ts-Meb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Подходы" id="ssw-Pb-Quk">
+                    <navigationItem key="navigationItem" title="Подходы" id="ssw-Pb-Quk" customClass="EditDoneNavigationItem">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="mhw-6w-krg">
                                 <connections>
@@ -108,6 +108,9 @@
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
+                        <connections>
+                            <outlet property="tableView" destination="6EZ-KE-OoK" id="YOw-zh-WiP"/>
+                        </connections>
                     </navigationItem>
                     <connections>
                         <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="EditApproachViewController" id="Qs6-2F-ZWu"/>

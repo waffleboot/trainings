@@ -52,13 +52,13 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
     [self.training deleteApproach:approach];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
   }
-}
+}*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"ExerciseViewController"]) {
@@ -84,6 +84,14 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+  [self.training moveApproachFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
 - (void)addApproachViewControllerDidCancel:(AddApproachViewController *)controller {
   [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -95,6 +103,7 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 }
 
 - (void)addApproachViewController:(AddApproachViewController *)controller didEditApproach:(Approach *)approach {
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
   [self.tableView reloadData];
   [self dismissViewControllerAnimated:YES completion:nil];
 }

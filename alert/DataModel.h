@@ -24,6 +24,7 @@
 @property (readonly) NSArray *approaches;
 @property (readonly) NSUInteger maxRound;
 - (Approach*)addApproach:(Approach*)name;
+- (void)moveApproachFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)newIndex;
 - (void)deleteApproach:(Approach*)approach;
 @end
 

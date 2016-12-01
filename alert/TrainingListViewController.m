@@ -41,14 +41,14 @@
   return @[deleteAction,editAction];
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     NSArray *trainings = [[DataModel sharedInstance] trainings];
     Training *training = [trainings objectAtIndex:indexPath.row];
     [[DataModel sharedInstance] deleteTraining:training];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
   }
-}
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingListViewCell"];
@@ -89,6 +89,7 @@
 }
 
 - (void)addTrainingViewController:(AddTrainingViewController *)controller didEditTraining:(Training *)training {
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
   [self.tableView reloadData];
   [self dismissViewControllerAnimated:YES completion:nil];
 }

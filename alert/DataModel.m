@@ -117,6 +117,13 @@
   return maxRound;
 }
 
+- (void)moveApproachFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)newIndex {
+  id obj = [self.mutableApproaches objectAtIndex:sourceIndex];
+  [self.mutableApproaches removeObjectAtIndex:sourceIndex];
+  [self.mutableApproaches insertObject:obj atIndex:newIndex];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
+}
+
 @end
 
 @interface Approach ()
@@ -177,6 +184,7 @@
   id obj = [self.mutableExercises objectAtIndex:sourceIndex];
   [self.mutableExercises removeObjectAtIndex:sourceIndex];
   [self.mutableExercises insertObject:obj atIndex:newIndex];
+  [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
 @end
