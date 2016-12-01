@@ -5,37 +5,13 @@
 #import "TimerViewController.h"
 #import "DataModel.h"
 
-@interface TrainingViewController () <UITableViewDataSource,UITableViewDelegate,AddApproachViewControllerDelegate>
-
-@property (strong, nonatomic) IBOutlet UITableView *table;
-@property (strong, nonatomic) IBOutlet UITextField *smallPeriod;
-@property (strong, nonatomic) IBOutlet UITextField *largePeriod;
-
-- (IBAction)run:(id)sender;
+@interface TrainingViewController () <AddApproachViewControllerDelegate>
 
 @end
 
 @implementation TrainingViewController
 
 static NSString * const TIMER_SEGUE = @"startTimer";
-
-- (void)run:(id)sender {
-  [self performSegueWithIdentifier:TIMER_SEGUE sender:nil];
-}
-
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  self.largePeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.largePeriod] stringValue];
-  self.smallPeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.smallPeriod] stringValue];
-}
-
-- (void)dealloc {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)refresh {
-  [self.table reloadData];
-}
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableView * __weak weakTableView = tableView;
@@ -86,7 +62,8 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"ExerciseViewController"]) {
-    NSIndexPath *indexPath = [self.table indexPathForCell:sender];
+    UITableViewCell *cell = sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
     ExerciseViewController *dst = segue.destinationViewController;
     dst.approach = approach;
@@ -113,23 +90,13 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 
 - (void)addApproachViewController:(AddApproachViewController *)controller didAddApproach:(Approach *)approach {
   [self.training addApproach:approach];
-  [self.table reloadData];
+  [self.tableView reloadData];
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)addApproachViewController:(AddApproachViewController *)controller didEditApproach:(Approach *)approach {
-  [self.table reloadData];
+  [self.tableView reloadData];
   [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)onLargePeriod:(UITextField *)sender {
-  self.training.largePeriod = [sender.text integerValue];
-  [[DataModel sharedInstance] saveUserDefaultsTrainings];
-}
-
-- (IBAction)onSmallPeriod:(UITextField *)sender {
-  self.training.smallPeriod = [sender.text integerValue];
-  [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
 @end

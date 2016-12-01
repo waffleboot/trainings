@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hPZ-lH-Wuj" kind="show" identifier="TrainingViewController" id="amp-Tr-78u"/>
+                                    <segue destination="yyn-1y-9nH" kind="show" identifier="TrainingViewController" id="HL4-f9-b2p"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,140 +61,61 @@
             <point key="canvasLocation" x="1057" y="26"/>
         </scene>
         <!--approaches-->
-        <scene sceneID="aGa-Vy-8hV">
+        <scene sceneID="GAn-FR-orq">
             <objects>
-                <viewController storyboardIdentifier="TrainingViewController" automaticallyAdjustsScrollViewInsets="NO" id="hPZ-lH-Wuj" userLabel="approaches" customClass="TrainingViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R2t-b6-7Ct"/>
-                        <viewControllerLayoutGuide type="bottom" id="c0i-3E-piZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bTH-9A-Y2M">
+                <tableViewController id="yyn-1y-9nH" userLabel="approaches" customClass="TrainingViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6EZ-KE-OoK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OJc-i1-Hx0">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-26-aUQ" userLabel="table stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="523"/>
-                                        <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-kc-uTI" userLabel="table">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="523"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" textLabel="O1o-ZC-Ni3" style="IBUITableViewCellStyleDefault" id="muS-oE-Uja">
-                                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="muS-oE-Uja" id="2Jv-hR-dLe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1o-ZC-Ni3">
-                                                                    <rect key="frame" x="15" y="0.0" width="309" height="43"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </tableViewCellContentView>
-                                                        <connections>
-                                                            <segue destination="1VL-BL-OGC" kind="show" identifier="ExerciseViewController" id="5MS-T7-Aoh"/>
-                                                        </connections>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="hPZ-lH-Wuj" id="HTa-KT-cGj"/>
-                                                    <outlet property="delegate" destination="hPZ-lH-Wuj" id="kSc-tL-SqJ"/>
-                                                </connections>
-                                            </tableView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="meg-ub-tBJ">
-                                        <rect key="frame" x="0.0" y="531" width="359" height="56"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-5o-eMT" userLabel="label">
-                                                <rect key="frame" x="0.0" y="0.0" width="231" height="56"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между кругами (сек)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-Z3-KJM" userLabel="large">
-                                                        <rect key="frame" x="50" y="0.0" width="181" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между подходами (сек)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tl1-I8-2Fz" userLabel="small">
-                                                        <rect key="frame" x="31" y="32" width="200" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-AX-4bf" userLabel="value">
-                                                <rect key="frame" x="239" y="0.0" width="120" height="56"/>
-                                                <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-8w-9rN" userLabel="largeValue">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="AUw-3b-XLa"/>
-                                                            <constraint firstAttribute="width" constant="120" id="Qco-7h-ObK"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <connections>
-                                                            <action selector="onLargePeriod:" destination="hPZ-lH-Wuj" eventType="editingDidEnd" id="Kng-QK-rb3"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJW-Fn-hli" userLabel="smallValue">
-                                                        <rect key="frame" x="0.0" y="32" width="120" height="24"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <connections>
-                                                            <action selector="onSmallPeriod:" destination="hPZ-lH-Wuj" eventType="editingDidEnd" id="BZp-tW-cq5"/>
-                                                        </connections>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="c0i-3E-piZ" firstAttribute="top" secondItem="OJc-i1-Hx0" secondAttribute="bottom" constant="8" id="NbV-py-5N7"/>
-                            <constraint firstAttribute="trailing" secondItem="OJc-i1-Hx0" secondAttribute="trailing" constant="8" id="RV0-Ie-DdS"/>
-                            <constraint firstItem="OJc-i1-Hx0" firstAttribute="leading" secondItem="bTH-9A-Y2M" secondAttribute="leading" constant="8" id="dCR-Vv-WlC"/>
-                            <constraint firstItem="OJc-i1-Hx0" firstAttribute="top" secondItem="R2t-b6-7Ct" secondAttribute="bottom" constant="8" id="ylh-o8-oOb"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Подходы" id="9Mf-po-jHR">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="ngc-DD-hRz">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TrainingViewCell" textLabel="xEE-5e-kX1" style="IBUITableViewCellStyleDefault" id="bXR-kC-pYh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXR-kC-pYh" id="jXr-h7-2J9">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xEE-5e-kX1">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="AddApproachViewController" id="NmF-vm-EvP"/>
+                                    <segue destination="1VL-BL-OGC" kind="show" identifier="ExerciseViewController" id="zRG-on-Wbb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yyn-1y-9nH" id="013-fz-hVg"/>
+                            <outlet property="delegate" destination="yyn-1y-9nH" id="nGb-ts-Meb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Подходы" id="ssw-Pb-Quk">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="mhw-6w-krg">
+                                <connections>
+                                    <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="AddApproachViewController" id="sze-k0-lOi"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="play" id="gz5-NO-joa">
+                            <barButtonItem systemItem="play" id="LKY-XM-0q9">
                                 <connections>
-                                    <action selector="run:" destination="hPZ-lH-Wuj" id="IzZ-tn-YYu"/>
+                                    <segue destination="IXN-jL-BN3" kind="show" identifier="startTimer" id="jZU-cC-n1U"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="largePeriod" destination="GZ2-8w-9rN" id="fdy-bl-rxx"/>
-                        <outlet property="smallPeriod" destination="EJW-Fn-hli" id="mCM-oe-9x0"/>
-                        <outlet property="table" destination="cCS-kc-uTI" id="R2q-qw-nRg"/>
-                        <segue destination="IXN-jL-BN3" kind="show" identifier="startTimer" id="4jN-oA-mfr"/>
-                        <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="EditApproachViewController" id="8Of-X6-U2b"/>
+                        <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="EditApproachViewController" id="Qs6-2F-ZWu"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u1h-gR-W2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0f3-NY-ZM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989.5999999999999" y="25.637181409295355"/>
+            <point key="canvasLocation" x="1956" y="26"/>
         </scene>
         <!--Timer-->
         <scene sceneID="Ycc-tQ-Ksb">
@@ -907,7 +828,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XXO-Bw-XSY"/>
-        <segue reference="8Of-X6-U2b"/>
+        <segue reference="5LS-M9-8v6"/>
+        <segue reference="sze-k0-lOi"/>
     </inferredMetricsTieBreakers>
 </document>
