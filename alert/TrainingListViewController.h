@@ -1,6 +1,5 @@
 
 #import <UIKit/UIKit.h>
-#import "AddTrainingViewController.h"
 
-@interface TrainingListViewController : UITableViewController <AddTrainingViewControllerDelegate>
+@interface TrainingListViewController : UITableViewController
 @end

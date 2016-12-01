@@ -4,17 +4,18 @@
 @class Training;
 @class AddTrainingViewController;
 
-@protocol AddTrainingViewControllerDelegate <NSObject>
+@protocol AddTrainingViewControllerDelegate
 - (void)addTrainingViewControllerDidCancel:(AddTrainingViewController *)controller;
 - (void)addTrainingViewController:(AddTrainingViewController *)controller
                    didAddTraining:(Training *)training;
+- (void)addTrainingViewController:(AddTrainingViewController *)controller
+                   didEditTraining:(Training *)training;
+
 @end
 
-@interface AddTrainingViewController : UIViewController
+@interface AddTrainingViewController : UITableViewController
 
-@property (nonatomic, weak) id <AddTrainingViewControllerDelegate> delegate;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
+@property (strong, nonatomic) id <AddTrainingViewControllerDelegate> delegate;
+@property (strong, nonatomic) Training *training;
 
 @end

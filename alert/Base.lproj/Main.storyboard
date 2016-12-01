@@ -47,121 +47,17 @@
                     <navigationItem key="navigationItem" title="Тренировки" id="AVE-U9-tY0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="71J-Lj-w8i">
                             <connections>
-                                <segue destination="hgY-9i-QTJ" kind="presentation" identifier="AddTraining" id="XXO-Bw-XSY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y74-zG-Cur" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1058" y="123"/>
-        </scene>
-        <!--add training-->
-        <scene sceneID="sfX-Y4-qcf">
-            <objects>
-                <viewController id="r8u-j4-eKi" userLabel="add training" customClass="AddTrainingViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I0M-uT-cd1"/>
-                        <viewControllerLayoutGuide type="bottom" id="Es0-QV-YY3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x28-Qq-eZS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="642-5i-1x6">
-                                <rect key="frame" x="8" y="64" width="359" height="124"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tzN-E5-joI">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название тренировки:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-Gc-e8a">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0F-FG-fOc">
-                                                <rect key="frame" x="0.0" y="30" width="359" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pmC-X8-VEZ">
-                                        <rect key="frame" x="0.0" y="68" width="359" height="56"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-EX-fPW">
-                                                <rect key="frame" x="0.0" y="0.0" width="231" height="56"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между кругами (сек)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-10-n7G">
-                                                        <rect key="frame" x="50" y="0.0" width="181" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между подходами (сек)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xp-eh-u0M">
-                                                        <rect key="frame" x="31" y="32" width="200" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rMT-zb-SVn">
-                                                <rect key="frame" x="239" y="0.0" width="120" height="56"/>
-                                                <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REP-6a-AJp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="SEC-bL-AQv"/>
-                                                            <constraint firstAttribute="height" constant="24" id="VbP-fe-TTi"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pS-3L-xXO">
-                                                        <rect key="frame" x="0.0" y="32" width="120" height="24"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="642-5i-1x6" secondAttribute="trailing" constant="8" id="PEu-yc-hfW"/>
-                            <constraint firstItem="642-5i-1x6" firstAttribute="leading" secondItem="x28-Qq-eZS" secondAttribute="leading" constant="8" id="fUI-2O-nUI"/>
-                            <constraint firstItem="642-5i-1x6" firstAttribute="top" secondItem="I0M-uT-cd1" secondAttribute="bottom" id="kLP-mt-4ab"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Новая тренировка" id="FXE-si-4y9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="t9J-K9-PSe">
-                            <connections>
-                                <action selector="cancel:" destination="r8u-j4-eKi" id="M5M-3j-vKD"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0CJ-ok-7LH">
-                            <connections>
-                                <action selector="done:" destination="r8u-j4-eKi" id="t6i-GE-0LC"/>
+                                <segue destination="hgY-9i-QTJ" kind="presentation" identifier="AddTrainingViewController" id="XXO-Bw-XSY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="largePeriod" destination="REP-6a-AJp" id="Srp-hi-C9O"/>
-                        <outlet property="name" destination="Z0F-FG-fOc" id="gqS-Ij-3xH"/>
-                        <outlet property="smallPeriod" destination="4pS-3L-xXO" id="vvU-SC-9UC"/>
+                        <segue destination="hgY-9i-QTJ" kind="presentation" identifier="EditTrainingViewController" id="5LS-M9-8v6"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-o9-NLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y74-zG-Cur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="921.58920539730138"/>
+            <point key="canvasLocation" x="1057" y="26"/>
         </scene>
         <!--approaches-->
         <scene sceneID="aGa-Vy-8hV">
@@ -427,7 +323,141 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW0-5L-EDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816.8000000000002" y="977.36131934032994"/>
+            <point key="canvasLocation" x="2888.8000000000002" y="932.38380809595208"/>
+        </scene>
+        <!--add training-->
+        <scene sceneID="OA6-fL-sHB">
+            <objects>
+                <tableViewController id="VcF-Tv-PVi" userLabel="add training" customClass="AddTrainingViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="uzn-YE-0yz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Название тренировки" id="UPQ-E2-b8j">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="86m-Jf-sfb">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86m-Jf-sfb" id="330-4M-NeZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название тренировки" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-nC-4GS" userLabel="name">
+                                                    <rect key="frame" x="65" y="5" width="255" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Время отдыха" id="zWE-1X-Rmi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s4k-ab-GzV">
+                                        <rect key="frame" x="0.0" y="157" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4k-ab-GzV" id="GUZ-XB-Q5f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-U5-qZD">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между кругами (сек)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwa-rD-HTI">
+                                                            <rect key="frame" x="0.0" y="13.5" width="231" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oau-Xb-IcO">
+                                                            <rect key="frame" x="239" y="7" width="120" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="2f2-gD-h8L"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yB3-U5-qZD" firstAttribute="top" secondItem="GUZ-XB-Q5f" secondAttribute="top" id="9ma-z2-aoJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="yB3-U5-qZD" secondAttribute="bottom" id="VjE-k9-qxh"/>
+                                                <constraint firstAttribute="trailing" secondItem="yB3-U5-qZD" secondAttribute="trailing" constant="8" id="gh3-3f-S7W"/>
+                                                <constraint firstItem="yB3-U5-qZD" firstAttribute="leading" secondItem="GUZ-XB-Q5f" secondAttribute="leading" constant="8" id="nPh-RK-q28"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="D6s-Kt-jfr">
+                                        <rect key="frame" x="0.0" y="201" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D6s-Kt-jfr" id="ZEE-yb-b0L">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-HN-yTI">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между подходами (сек)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-0t-A5K">
+                                                            <rect key="frame" x="0.0" y="13.5" width="231" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-Wk-slB">
+                                                            <rect key="frame" x="239" y="7" width="120" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="Nh8-6l-hQQ"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PL5-HN-yTI" firstAttribute="leading" secondItem="ZEE-yb-b0L" secondAttribute="leading" constant="8" id="1KF-o0-HBa"/>
+                                                <constraint firstAttribute="trailing" secondItem="PL5-HN-yTI" secondAttribute="trailing" constant="8" id="9Ay-YM-KS9"/>
+                                                <constraint firstAttribute="bottom" secondItem="PL5-HN-yTI" secondAttribute="bottom" id="D9b-Dp-K1o"/>
+                                                <constraint firstItem="PL5-HN-yTI" firstAttribute="top" secondItem="ZEE-yb-b0L" secondAttribute="top" id="gmT-Ex-hSb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="VcF-Tv-PVi" id="i7L-lH-7bc"/>
+                            <outlet property="delegate" destination="VcF-Tv-PVi" id="vRh-5L-ZaT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новая тренировка" id="3Pg-i4-5ag">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sEt-tk-KmM">
+                            <connections>
+                                <action selector="cancel:" destination="VcF-Tv-PVi" id="kfa-bs-Elw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="oc0-Qr-Fr5">
+                            <connections>
+                                <action selector="done:" destination="VcF-Tv-PVi" id="8iy-p1-hE2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="largePeriod" destination="Oau-Xb-IcO" id="aZT-yR-ph9"/>
+                        <outlet property="name" destination="rCV-nC-4GS" id="9Li-fS-Wd2"/>
+                        <outlet property="smallPeriod" destination="Vdc-Wk-slB" id="qOz-5w-icN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5r-sD-VHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="1715.8920539730136"/>
         </scene>
         <!--Done-->
         <scene sceneID="zjh-lf-VYs">
@@ -459,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikE-nb-n1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.8000000000002" y="1742.8785607196403"/>
+            <point key="canvasLocation" x="2888.8000000000002" y="1715.8920539730136"/>
         </scene>
         <!--add approach-->
         <scene sceneID="fcx-oS-2zu">
@@ -479,7 +509,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-ci-G3k">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название подхода" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-ci-G3k">
                                                     <rect key="frame" x="23" y="5" width="317" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
@@ -515,7 +545,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmZ-U1-O9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4586" y="922"/>
+            <point key="canvasLocation" x="3828" y="1715.8920539730136"/>
         </scene>
         <!--exercises-->
         <scene sceneID="Put-so-zth">
@@ -833,7 +863,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0Z-ld-sRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4703" y="26"/>
+            <point key="canvasLocation" x="4728.8000000000002" y="931.48425787106453"/>
         </scene>
         <!--start-->
         <scene sceneID="Ao4-Yo-yfd">
@@ -851,7 +881,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9Y-JB-OoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="138" y="26"/>
         </scene>
         <!--add training-->
         <scene sceneID="aNi-AO-Ig3">
@@ -864,12 +894,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="r8u-j4-eKi" kind="relationship" relationship="rootViewController" id="0gK-Z7-uyh"/>
+                        <segue destination="VcF-Tv-PVi" kind="relationship" relationship="rootViewController" id="iTv-eS-6tN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVQ-OR-lD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="922"/>
+            <point key="canvasLocation" x="1996" y="921.58920539730138"/>
         </scene>
         <!--add exercise-->
         <scene sceneID="Suq-20-8Hb">
@@ -905,10 +935,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KN6-BB-bqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3687.1999999999998" y="922.48875562218893"/>
+            <point key="canvasLocation" x="3828" y="931.48425787106453"/>
         </scene>
     </scenes>
     <resources>
         <image name="options" width="449" height="450"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XXO-Bw-XSY"/>
+    </inferredMetricsTieBreakers>
 </document>
