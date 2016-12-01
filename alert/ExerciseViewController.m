@@ -26,6 +26,14 @@
   return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+  [self.approach moveExerciseFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
 - (void)addExerciseViewControllerDidCancel:(AddExerciseViewController *)controller {
   [self dismissViewControllerAnimated:YES completion:nil];
 }

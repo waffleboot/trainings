@@ -32,6 +32,7 @@
 @property (readonly) NSArray *exercises;
 @property (weak) Training *training;
 - (void)addExercise:(NSUInteger)count;
+- (void)moveExerciseFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)newIndex;
 - (void)removeExercise:(NSUInteger)index;
 - (NSUInteger)exercisesCountForRound:(NSUInteger)round;
 @end

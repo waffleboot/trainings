@@ -603,12 +603,15 @@
                             <outlet property="delegate" destination="1VL-BL-OGC" id="2ao-Ad-Oqa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Повторения" id="5bO-mb-8hn">
+                    <navigationItem key="navigationItem" title="Повторения" id="5bO-mb-8hn" customClass="EditDoneNavigationItem">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tJE-up-2jb">
                             <connections>
                                 <segue destination="PqQ-K2-UTq" kind="presentation" identifier="AddExerciseViewController" id="x7J-vw-YQF"/>
                             </connections>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="tableView" destination="e0K-JF-mCm" id="egk-w6-mCd"/>
+                        </connections>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8X-bL-r62" userLabel="First Responder" sceneMemberID="firstResponder"/>

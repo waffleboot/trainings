@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4C0B62B47B0951E00350EA1 /* libPods-alert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03738D72CA16773440D23802 /* libPods-alert.a */; };
+		F533E4F61DF05F8700E1E75F /* EditDoneNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F533E4F51DF05F8700E1E75F /* EditDoneNavigationItem.m */; };
 		F5690A691DE40D4E00D6D505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5690A681DE40D4E00D6D505 /* main.m */; };
 		F5690A6C1DE40D4E00D6D505 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5690A6B1DE40D4E00D6D505 /* AppDelegate.m */; };
 		F5690A6F1DE40D4E00D6D505 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5690A6E1DE40D4E00D6D505 /* ViewController.m */; };
@@ -31,6 +32,8 @@
 		03738D72CA16773440D23802 /* libPods-alert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-alert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FA0E55056BADA2389DD6F7 /* Pods-alert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-alert/Pods-alert.debug.xcconfig"; sourceTree = "<group>"; };
 		59C61D778B62B6EE90578026 /* Pods-alert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alert.release.xcconfig"; path = "Pods/Target Support Files/Pods-alert/Pods-alert.release.xcconfig"; sourceTree = "<group>"; };
+		F533E4F41DF05F8700E1E75F /* EditDoneNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDoneNavigationItem.h; sourceTree = "<group>"; };
+		F533E4F51DF05F8700E1E75F /* EditDoneNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDoneNavigationItem.m; sourceTree = "<group>"; };
 		F5690A641DE40D4E00D6D505 /* alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5690A681DE40D4E00D6D505 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5690A6A1DE40D4E00D6D505 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				F59068B51DE5C4AF00144593 /* TimerViewController.m */,
 				F56E57161DEEA743003E250F /* AddExerciseViewController.h */,
 				F56E57171DEEA743003E250F /* AddExerciseViewController.m */,
+				F533E4F41DF05F8700E1E75F /* EditDoneNavigationItem.h */,
+				F533E4F51DF05F8700E1E75F /* EditDoneNavigationItem.m */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				F56E57181DEEA743003E250F /* AddExerciseViewController.m in Sources */,
 				F59068B31DE5B5BE00144593 /* const.m in Sources */,
 				F59068751DE52B6100144593 /* TrainingListViewController.m in Sources */,
+				F533E4F61DF05F8700E1E75F /* EditDoneNavigationItem.m in Sources */,
 				F5690A691DE40D4E00D6D505 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

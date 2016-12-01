@@ -173,5 +173,11 @@
   [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
+- (void)moveExerciseFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)newIndex {
+  id obj = [self.mutableExercises objectAtIndex:sourceIndex];
+  [self.mutableExercises removeObjectAtIndex:sourceIndex];
+  [self.mutableExercises insertObject:obj atIndex:newIndex];
+}
+
 @end
 
