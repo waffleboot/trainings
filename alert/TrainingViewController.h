@@ -3,6 +3,8 @@
 #import "DataModel.h"
 
 @interface TrainingViewController : UIViewController
-@property Training *training;
+
+@property (strong, nonatomic) Training *training;
+
 @end
 

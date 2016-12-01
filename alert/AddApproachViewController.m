@@ -1,33 +1,26 @@
 
 #import "AddApproachViewController.h"
-#import "ExerciseViewController.h"
-#import "const.h"
+#import "DataModel.h"
 
 @interface AddApproachViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *name;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)done:(id)sender;
+
 @end
 
 @implementation AddApproachViewController
 
-- (IBAction)addApproach:(UIButton *)sender {
-  Approach *approach = [self.training addApproachWithName:self.name.text];
-  [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UPDATE object:nil];
-
-  ExerciseViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:EXERCISE_SEGUE];
-  vc.approach = approach;
-  
-  NSMutableArray *viewControllers = [self.navigationController.viewControllers mutableCopy];
-  [viewControllers removeLastObject];
-  [viewControllers addObject:vc];
-  [self.navigationController setViewControllers:viewControllers animated:NO];
+- (void)cancel:(id)sender {
+  [self.delegate addApproachViewControllerDidCancel:self];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)done:(id)sender {
+  Approach *approach = [[Approach alloc] init];
+  approach.name = self.name.text;
+  [self.delegate addApproachViewController:self didAddApproach:approach];
 }
 
 @end

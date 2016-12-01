@@ -23,7 +23,7 @@
 @property NSUInteger largePeriod;
 @property (readonly) NSArray *approaches;
 @property (readonly) NSUInteger maxRound;
-- (Approach*)addApproachWithName:(NSString*)name;
+- (Approach*)addApproach:(Approach*)name;
 - (void)deleteApproach:(Approach*)approach;
 @end
 

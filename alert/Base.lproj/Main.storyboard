@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Тренировки-->
+        <!--trainings-->
         <scene sceneID="5h6-MH-gUu">
             <objects>
-                <tableViewController id="62o-id-OF0" customClass="TrainingListViewController" sceneMemberID="viewController">
+                <tableViewController id="62o-id-OF0" userLabel="trainings" customClass="TrainingListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ohJ-XU-YX7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="1058" y="123"/>
         </scene>
-        <!--AddTraining-->
+        <!--add training-->
         <scene sceneID="sfX-Y4-qcf">
             <objects>
-                <viewController id="r8u-j4-eKi" userLabel="AddTraining" customClass="AddTrainingViewController" sceneMemberID="viewController">
+                <viewController id="r8u-j4-eKi" userLabel="add training" customClass="AddTrainingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I0M-uT-cd1"/>
                         <viewControllerLayoutGuide type="bottom" id="Es0-QV-YY3"/>
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="1852" y="921.58920539730138"/>
         </scene>
-        <!--Подходы-->
+        <!--approaches-->
         <scene sceneID="aGa-Vy-8hV">
             <objects>
-                <viewController storyboardIdentifier="TrainingViewController" automaticallyAdjustsScrollViewInsets="NO" id="hPZ-lH-Wuj" userLabel="Подходы" customClass="TrainingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingViewController" automaticallyAdjustsScrollViewInsets="NO" id="hPZ-lH-Wuj" userLabel="approaches" customClass="TrainingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R2t-b6-7Ct"/>
                         <viewControllerLayoutGuide type="bottom" id="c0i-3E-piZ"/>
@@ -182,7 +182,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-pz-fP4" userLabel="run" customClass="RoundButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="36"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Запуск">
@@ -190,19 +190,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="runTraining:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="5Vp-dK-pBB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eox-rU-9Sr" userLabel="add">
-                                                <rect key="frame" x="279" y="0.0" width="36" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="X4D-TG-c2G"/>
-                                                    <constraint firstAttribute="width" constant="36" id="qjJ-Ud-3Qr"/>
-                                                </constraints>
-                                                <state key="normal" image="plus">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addApproach:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="pmr-9s-Row"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izk-KR-mha" userLabel="options">
@@ -215,21 +202,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название тренировки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-Bx-MQY" userLabel="name">
-                                        <rect key="frame" x="0.0" y="44" width="359" height="32"/>
-                                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Hki-Np-s2g"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-26-aUQ" userLabel="table stack">
-                                        <rect key="frame" x="0.0" y="84" width="359" height="439"/>
+                                        <rect key="frame" x="0.0" y="44" width="359" height="479"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-kc-uTI" userLabel="table">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="439"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="479"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" textLabel="O1o-ZC-Ni3" style="IBUITableViewCellStyleDefault" id="muS-oE-Uja">
@@ -310,10 +287,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="3lt-Bx-MQY" secondAttribute="trailing" id="fYV-VI-syi"/>
-                                    <constraint firstItem="3lt-Bx-MQY" firstAttribute="leading" secondItem="OJc-i1-Hx0" secondAttribute="leading" id="y7F-BE-yrk"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -325,15 +298,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подходы" id="9Mf-po-jHR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ngc-DD-hRz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ngc-DD-hRz">
+                            <connections>
+                                <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="AddApproachViewController" id="NmF-vm-EvP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="largePeriod" destination="GZ2-8w-9rN" id="fdy-bl-rxx"/>
-                        <outlet property="name" destination="3lt-Bx-MQY" id="iMQ-H3-uFZ"/>
                         <outlet property="smallPeriod" destination="EJW-Fn-hli" id="mCM-oe-9x0"/>
                         <outlet property="table" destination="cCS-kc-uTI" id="R2q-qw-nRg"/>
                         <segue destination="IXN-jL-BN3" kind="show" identifier="startTimer" id="4jN-oA-mfr"/>
-                        <segue destination="lVj-KU-4kL" kind="show" identifier="AddApproachViewController" id="ZMI-aP-tpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1h-gR-W2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,66 +461,66 @@
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="1742.8785607196403"/>
         </scene>
-        <!--AddApproach-->
-        <scene sceneID="FHF-zX-l6Z">
+        <!--add approach-->
+        <scene sceneID="fcx-oS-2zu">
             <objects>
-                <viewController storyboardIdentifier="AddApproachViewController" id="lVj-KU-4kL" userLabel="AddApproach" customClass="AddApproachViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JP8-hK-5gy"/>
-                        <viewControllerLayoutGuide type="bottom" id="2e2-Dz-r8t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zqj-dX-JhM">
+                <tableViewController id="gTB-gl-T2z" userLabel="add approach" customClass="AddApproachViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="pOM-DS-hxN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-in-mcY">
-                                <rect key="frame" x="8" y="72" width="359" height="95.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название подхода:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7E-rA-xdp">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9O4-CM-sH1">
-                                        <rect key="frame" x="0.0" y="24.5" width="359" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVi-zT-dkO" customClass="RoundButton">
-                                        <rect key="frame" x="0.0" y="62.5" width="359" height="33"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Добавить подход">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addApproach:" destination="lVj-KU-4kL" eventType="touchUpInside" id="VZ1-pv-E7o"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xyA-in-mcY" secondAttribute="trailing" constant="8" id="HPA-AD-RpP"/>
-                            <constraint firstItem="xyA-in-mcY" firstAttribute="top" secondItem="JP8-hK-5gy" secondAttribute="bottom" constant="8" id="ai6-8Q-zBN"/>
-                            <constraint firstItem="xyA-in-mcY" firstAttribute="leading" secondItem="Zqj-dX-JhM" secondAttribute="leading" constant="8" id="eBC-HZ-79M"/>
-                        </constraints>
-                    </view>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="ADH-8s-Lls">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="06u-UN-eJ9">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="06u-UN-eJ9" id="8JR-0O-BPK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-ci-G3k">
+                                                    <rect key="frame" x="23" y="5" width="317" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="gTB-gl-T2z" id="EAz-xG-b2m"/>
+                            <outlet property="delegate" destination="gTB-gl-T2z" id="d1c-7i-X5a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Добавить подход" id="Lha-N5-1Mp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Pvv-cT-BT8">
+                            <connections>
+                                <action selector="cancel:" destination="gTB-gl-T2z" id="pJ3-EX-hnh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="y6T-Vq-Vj1">
+                            <connections>
+                                <action selector="done:" destination="gTB-gl-T2z" id="toN-2K-DVE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="name" destination="9O4-CM-sH1" id="VQd-pW-Gab"/>
+                        <outlet property="name" destination="U1I-ci-G3k" id="cdN-uw-lMR"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KBD-4H-fjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmZ-U1-O9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3687.1999999999998" y="922.48875562218893"/>
+            <point key="canvasLocation" x="4586" y="922"/>
         </scene>
-        <!--Упражнения-->
+        <!--exercises-->
         <scene sceneID="Put-so-zth">
             <objects>
-                <tableViewController id="1VL-BL-OGC" customClass="ExerciseViewController" sceneMemberID="viewController">
+                <tableViewController id="1VL-BL-OGC" userLabel="exercises" customClass="ExerciseViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e0K-JF-mCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -600,19 +575,19 @@
                     <navigationItem key="navigationItem" title="Упражнения" id="5bO-mb-8hn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tJE-up-2jb">
                             <connections>
-                                <segue destination="PqQ-K2-UTq" kind="presentation" identifier="AddExercise" id="ISP-Ns-3o7"/>
+                                <segue destination="PqQ-K2-UTq" kind="presentation" identifier="AddExerciseViewController" id="x7J-vw-YQF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8X-bL-r62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2817" y="26"/>
+            <point key="canvasLocation" x="2890" y="26"/>
         </scene>
-        <!--Add Exercise-->
+        <!--add exercise-->
         <scene sceneID="JsB-0W-jHi">
             <objects>
-                <tableViewController id="CuZ-di-exd" userLabel="Add Exercise" customClass="AddExerciseViewController" sceneMemberID="viewController">
+                <tableViewController id="CuZ-di-exd" userLabel="add exercise" customClass="AddExerciseViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="55" sectionHeaderHeight="18" sectionFooterHeight="18" id="rZH-SE-urG" userLabel="table">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -858,12 +833,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0Z-ld-sRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4728.8000000000002" y="25.637181409295355"/>
+            <point key="canvasLocation" x="4703" y="26"/>
         </scene>
-        <!--MainNav-->
+        <!--start-->
         <scene sceneID="Ao4-Yo-yfd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gE-cI-6fR" userLabel="MainNav" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gE-cI-6fR" userLabel="start" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="95E-gF-DBv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -878,10 +853,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--AddTrainingNav-->
+        <!--add training-->
         <scene sceneID="aNi-AO-Ig3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgY-9i-QTJ" userLabel="AddTrainingNav" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgY-9i-QTJ" userLabel="add training" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MS9-nT-vTs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -896,10 +871,10 @@
             </objects>
             <point key="canvasLocation" x="1057" y="922"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--add exercise-->
         <scene sceneID="Suq-20-8Hb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PqQ-K2-UTq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PqQ-K2-UTq" userLabel="add exercise" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="95A-5G-Gjs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -914,9 +889,26 @@
             </objects>
             <point key="canvasLocation" x="3789.5999999999999" y="25.637181409295355"/>
         </scene>
+        <!--add approach-->
+        <scene sceneID="O33-jP-y2m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PcF-4Z-4Mi" userLabel="add approach" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EcN-jO-Cxe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gTB-gl-T2z" kind="relationship" relationship="rootViewController" id="hwO-XN-tB2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KN6-BB-bqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3687.1999999999998" y="922.48875562218893"/>
+        </scene>
     </scenes>
     <resources>
         <image name="options" width="449" height="450"/>
-        <image name="plus" width="255" height="256"/>
     </resources>
 </document>

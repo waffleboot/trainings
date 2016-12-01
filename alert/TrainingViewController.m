@@ -4,13 +4,12 @@
 #import "AddApproachViewController.h"
 #import "TimerViewController.h"
 #import "DataModel.h"
-#import "const.h"
 
-@interface TrainingViewController () <UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UITextField *smallPeriod;
-@property (weak, nonatomic) IBOutlet UITextField *largePeriod;
+@interface TrainingViewController () <UITableViewDataSource,UITableViewDelegate,AddApproachViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (strong, nonatomic) IBOutlet UITextField *smallPeriod;
+@property (strong, nonatomic) IBOutlet UITextField *largePeriod;
 
 @end
 
@@ -18,29 +17,14 @@
 
 static NSString * const TIMER_SEGUE = @"startTimer";
 
-- (IBAction)addApproach:(UIButton *)sender {
-  [self performSegueWithIdentifier:ADD_APPROACH_SEGUE sender:nil];
-}
-
-- (IBAction)deleteTraining:(UIButton *)sender {
-  [[DataModel sharedInstance] deleteTraining:self.training];
-  [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UPDATE object:nil];
-  [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)runTraining:(UIButton *)sender {
   [self performSegueWithIdentifier:TIMER_SEGUE sender:nil];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.name.text = self.training.name;
   self.largePeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.largePeriod] stringValue];
   self.smallPeriod.text = [[NSNumber numberWithUnsignedInteger:self.training.smallPeriod] stringValue];
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(refresh)
-                                               name:NOTIFICATION_UPDATE
-                                             object:nil];
 }
 
 - (void)dealloc {
@@ -70,28 +54,32 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   }
 }
 
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
-  [self performSegueWithIdentifier:EXERCISE_SEGUE sender:approach];
-}*/
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue.identifier isEqualToString:EXERCISE_SEGUE]) {
+  if ([segue.identifier isEqualToString:@"ExerciseViewController"]) {
     NSIndexPath *indexPath = [self.table indexPathForCell:sender];
     Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
     ExerciseViewController *dst = segue.destinationViewController;
     dst.approach = approach;
-  } else if ([segue.identifier isEqualToString:ADD_APPROACH_SEGUE]) {
-    if ([segue.destinationViewController class] == [AddApproachViewController class]) {
-      AddApproachViewController *dst = segue.destinationViewController;
-      dst.training = self.training;
-    }
+  } else if ([segue.identifier isEqualToString:@"AddApproachViewController"]) {
+    UINavigationController *navigationController = segue.destinationViewController;
+    AddApproachViewController *addApproachViewController = [[navigationController viewControllers] objectAtIndex:0];
+    addApproachViewController.delegate = self;
   } else if ([segue.identifier isEqualToString:TIMER_SEGUE]) {
     if ([segue.destinationViewController class] == [TimerViewController class]) {
       TimerViewController *dst = segue.destinationViewController;
       dst.training = self.training;
     }
   }
+}
+
+- (void)addApproachViewControllerDidCancel:(AddApproachViewController *)controller {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addApproachViewController:(AddApproachViewController *)controller didAddApproach:(Approach *)approach {
+  [self.training addApproach:approach];
+  [self.table reloadData];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onLargePeriod:(UITextField *)sender {

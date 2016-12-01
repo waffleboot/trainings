@@ -1,33 +1,23 @@
-//
-//  AddExerciseViewController.m
-//  alert
-//
-//  Created by Андрей on 30.11.16.
-//  Copyright © 2016 Andrei Yangabishev. All rights reserved.
-//
 
 #import "AddExerciseViewController.h"
 
 @interface AddExerciseViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextField *singleRepeat;
+@property (strong, nonatomic) IBOutlet UITextField *singleRepeatCount;
+@property (strong, nonatomic) IBOutlet UITextField *rangeRepeatFrom;
+@property (strong, nonatomic) IBOutlet UITextField *rangeRepeatTo;
+@property (strong, nonatomic) IBOutlet UIView *footer1;
+@property (strong, nonatomic) IBOutlet UIView *footer2;
+
+- (IBAction)addRepeat:(id)sender;
+- (IBAction)addRange:(id)sender;
+
+- (IBAction)cancel:(id)sender;
+
 @end
 
 @implementation AddExerciseViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -47,69 +37,15 @@
   return 55;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)addRepeat:(id)sender {
   NSString *repeatValue = self.singleRepeat.text;
   NSString *repeatCount = self.singleRepeatCount.text;
   if (repeatValue) {
-    NSNumber *repeat = [NSNumber numberWithInteger:labs([repeatValue integerValue])];
-    NSMutableArray *array = [NSMutableArray array];
+    NSMutableArray<NSNumber*> *array = [NSMutableArray array];
+    NSNumber *repeat = [NSNumber numberWithInteger:[repeatValue integerValue]];
     [array addObject:repeat];
     if (repeatCount) {
-      NSInteger count = labs([repeatCount integerValue]);
+      NSInteger count = [repeatCount integerValue];
       for (int i = 1; i < count; ++i) {
         [array addObject:repeat];
       }
@@ -122,15 +58,15 @@
   NSString *repeatFrom = self.rangeRepeatFrom.text;
   NSString *repeatTo   = self.rangeRepeatTo.text;
   if (repeatFrom && repeatTo) {
-    unsigned from = (unsigned) labs([repeatFrom integerValue]);
-    unsigned to   = (unsigned) labs([repeatTo integerValue]);
-    NSMutableArray *array = [NSMutableArray array];
+    NSInteger from = [repeatFrom integerValue];
+    NSInteger to   = [repeatTo integerValue];
+    NSMutableArray<NSNumber*> *array = [NSMutableArray array];
     if (from < to) {
-      for (int i = from; i <= to; ++i) {
+      for (int i = (unsigned) from; i <= to; ++i) {
         [array addObject:[NSNumber numberWithInt:i]];
       }
     } else {
-      for (int i = from; i >= to; --i) {
+      for (int i = (unsigned) from; i >= to; --i) {
         [array addObject:[NSNumber numberWithInt:i]];
       }
     }

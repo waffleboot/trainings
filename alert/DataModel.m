@@ -99,9 +99,7 @@
   [[DataModel sharedInstance] saveUserDefaultsTrainings];
 }
 
-- (Approach *)addApproachWithName:(NSString *)name {
-  Approach *approach = [[Approach alloc] init];
-  approach.name = name;
+- (Approach *)addApproach:(Approach *)approach {
   approach.training = self;
   [self.mutableApproaches addObject:approach];
   [[DataModel sharedInstance] saveUserDefaultsTrainings];

@@ -1,6 +1,10 @@
 
 #import "ExerciseViewController.h"
 
+@interface ExerciseViewController () <AddExerciseViewControllerDelegate>
+
+@end
+
 @implementation ExerciseViewController
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -26,7 +30,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)addExerciseViewController:(AddExerciseViewController *)controller didAddExercise:(NSArray *)exercises {
+- (void)addExerciseViewController:(AddExerciseViewController *)controller didAddExercise:(NSArray<NSNumber*> *)exercises {
   for (NSNumber *i in exercises) {
     [self.approach addExercise:[i integerValue]];
   }
@@ -35,7 +39,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue.identifier isEqualToString:@"AddExercise"]) {
+  if ([segue.identifier isEqualToString:@"AddExerciseViewController"]) {
     UINavigationController *navigationController = segue.destinationViewController;
     AddExerciseViewController *addExerciseViewController = [[navigationController viewControllers] objectAtIndex:0];
     addExerciseViewController.delegate = self;
@@ -45,4 +49,5 @@
 @end
 
 @implementation ExerciseViewCell
+
 @end
