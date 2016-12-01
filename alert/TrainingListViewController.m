@@ -41,15 +41,6 @@
   return @[deleteAction,editAction];
 }
 
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (editingStyle == UITableViewCellEditingStyleDelete) {
-    NSArray *trainings = [[DataModel sharedInstance] trainings];
-    Training *training = [trainings objectAtIndex:indexPath.row];
-    [[DataModel sharedInstance] deleteTraining:training];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-  }
-}*/
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrainingListViewCell"];
   NSArray *trainings = [[DataModel sharedInstance] trainings];

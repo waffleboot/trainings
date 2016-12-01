@@ -52,14 +52,6 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   return cell;
 }
 
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (editingStyle == UITableViewCellEditingStyleDelete) {
-    Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
-    [self.training deleteApproach:approach];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-  }
-}*/
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"ExerciseViewController"]) {
     UITableViewCell *cell = sender;
