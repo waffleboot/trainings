@@ -535,7 +535,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="ДОБАВИТЬ НЕСКОЛЬКО ПОВТОРЕНИЙ" id="cfy-Ey-CpE" userLabel="повторения">
+                            <tableViewSection headerTitle="НЕСКОЛЬКО ПОВТОРЕНИЙ" id="cfy-Ey-CpE" userLabel="повторения">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bFu-Ll-xJH" userLabel="cell">
                                         <rect key="frame" x="0.0" y="56" width="375" height="55"/>
@@ -547,14 +547,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S1p-RT-nko" userLabel="stack">
                                                     <rect key="frame" x="20" y="17" width="335" height="20"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество повторений" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-I1-HZ3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="170.5" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-I1-HZ3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-Or-U0M">
-                                                            <rect key="frame" x="178.5" y="0.0" width="156.5" height="20"/>
+                                                            <rect key="frame" x="91.5" y="0.0" width="243.5" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -603,7 +603,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="ДОБАВИТЬ ДИАПАЗОН ПОВТОРЕНИЙ" id="B7W-WX-390" userLabel="диапазон">
+                            <tableViewSection headerTitle="ДИАПАЗОН ПОВТОРЕНИЙ" id="B7W-WX-390" userLabel="диапазон">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zgn-tz-5OL" userLabel="cell">
                                         <rect key="frame" x="0.0" y="223" width="375" height="55"/>
