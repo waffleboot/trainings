@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,35 +75,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OJc-i1-Hx0">
                                 <rect key="frame" x="8" y="72" width="359" height="587"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-lT-KCK" userLabel="buttons">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-pz-fP4" userLabel="run" customClass="RoundButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="315" height="36"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="Запуск">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="runTraining:" destination="hPZ-lH-Wuj" eventType="touchUpInside" id="5Vp-dK-pBB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izk-KR-mha" userLabel="options">
-                                                <rect key="frame" x="323" y="0.0" width="36" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="36" id="Inc-AK-o6u"/>
-                                                    <constraint firstAttribute="height" constant="36" id="fRx-we-pie"/>
-                                                </constraints>
-                                                <state key="normal" image="options"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-26-aUQ" userLabel="table stack">
-                                        <rect key="frame" x="0.0" y="44" width="359" height="479"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="523"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-kc-uTI" userLabel="table">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="479"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="523"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrainingViewCell" textLabel="O1o-ZC-Ni3" style="IBUITableViewCellStyleDefault" id="muS-oE-Uja">
@@ -194,11 +171,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подходы" id="9Mf-po-jHR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ngc-DD-hRz">
-                            <connections>
-                                <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="AddApproachViewController" id="NmF-vm-EvP"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="ngc-DD-hRz">
+                                <connections>
+                                    <segue destination="PcF-4Z-4Mi" kind="presentation" identifier="AddApproachViewController" id="NmF-vm-EvP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="play" id="gz5-NO-joa">
+                                <connections>
+                                    <action selector="run:" destination="hPZ-lH-Wuj" id="IzZ-tn-YYu"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="largePeriod" destination="GZ2-8w-9rN" id="fdy-bl-rxx"/>
@@ -922,9 +906,6 @@
             <point key="canvasLocation" x="2889" y="947"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="options" width="449" height="450"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XXO-Bw-XSY"/>
         <segue reference="8Of-X6-U2b"/>

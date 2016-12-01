@@ -11,13 +11,15 @@
 @property (strong, nonatomic) IBOutlet UITextField *smallPeriod;
 @property (strong, nonatomic) IBOutlet UITextField *largePeriod;
 
+- (IBAction)run:(id)sender;
+
 @end
 
 @implementation TrainingViewController
 
 static NSString * const TIMER_SEGUE = @"startTimer";
 
-- (IBAction)runTraining:(UIButton *)sender {
+- (void)run:(id)sender {
   [self performSegueWithIdentifier:TIMER_SEGUE sender:nil];
 }
 
