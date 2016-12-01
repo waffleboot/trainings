@@ -100,7 +100,6 @@
   self.stopwatch.timerType = MZTimerLabelTypeTimer;
   if (self.training.approaches.count > 0) {
     pos = 0; times = [Step calculateSteps:self.training];
-    NSLog(@"%@", times);
     [self updateText];
   }
 }
