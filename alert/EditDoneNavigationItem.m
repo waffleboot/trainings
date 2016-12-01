@@ -8,9 +8,7 @@ static NSInteger kTag = 1;
 - (void)awakeFromNib {
   [super awakeFromNib];
   NSMutableArray *buttons = [self.rightBarButtonItems mutableCopy];
-  UIBarButtonItem *editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit)];
-  editBarButtonItem.tag = kTag;
-  [buttons insertObject:editBarButtonItem atIndex:0];
+  [buttons insertObject:[self editBarButtonItem] atIndex:0];
   self.rightBarButtonItems = buttons;
 }
 
@@ -24,24 +22,35 @@ static NSInteger kTag = 1;
     return NO;
   }];
   if (idx != NSNotFound) {
-    NSMutableArray *buttons = [self.rightBarButtonItems mutableCopy]; item.tag = kTag;
+    NSMutableArray *buttons = [self.rightBarButtonItems mutableCopy];
     [buttons replaceObjectAtIndex:idx withObject:item];
     self.rightBarButtonItems = buttons;
   }
 }
 
+- (UIBarButtonItem *)barButtonItem:(UIBarButtonSystemItem)systemItem action:(SEL)action {
+  UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:action];
+  barButtonItem.tag = kTag;
+  return barButtonItem;
+}
+
+- (UIBarButtonItem *)doneBarButtonItem {
+  return [self barButtonItem:UIBarButtonSystemItemDone action:@selector(done)];
+}
+
+- (UIBarButtonItem *)editBarButtonItem {
+  return [self barButtonItem:UIBarButtonSystemItemEdit action:@selector(edit)];
+}
+
 - (void)edit {
-  UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                     target:self action:@selector(done)];
-  [self replaceWith:doneBarButtonItem];
+  [self replaceWith:[self doneBarButtonItem]];
   [self.tableView setEditing:YES animated:NO];
 }
 
 - (void)done {
-  UIBarButtonItem *editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                     target:self action:@selector(edit)];
-  [self replaceWith:editBarButtonItem];
+  [self replaceWith:[self editBarButtonItem]];
   [self.tableView setEditing:NO animated:NO];
+  [self.tableView reloadData];
   
 }
 
