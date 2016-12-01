@@ -35,6 +35,34 @@ static NSString * const TIMER_SEGUE = @"startTimer";
   [self.table reloadData];
 }
 
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableView * __weak weakTableView = tableView;
+  UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                                                        title:@"Edit"
+                                                                      handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+                                                                        
+                                                                        UITableView *localTableView = weakTableView;
+                                                                        [localTableView setEditing:NO animated:YES];
+                                                                        
+                                                                        Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
+                                                                        
+                                                                        [self performSegueWithIdentifier:@"EditApproachViewController" sender:approach];
+                                                                      }];
+  editAction.backgroundColor = [UIColor blueColor];
+  UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                                                          title:@"Delete"
+                                                                        handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+                                                                          
+                                                                          Approach *approach = [self.training.approaches objectAtIndex:indexPath.row];
+                                                                          [self.training deleteApproach:approach];
+
+                                                                          UITableView *localTableView = weakTableView;
+                                                                          [localTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                                                                        }];
+  deleteAction.backgroundColor = [UIColor redColor];
+  return @[deleteAction,editAction];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.training.approaches.count;
 }
@@ -64,6 +92,11 @@ static NSString * const TIMER_SEGUE = @"startTimer";
     UINavigationController *navigationController = segue.destinationViewController;
     AddApproachViewController *addApproachViewController = [[navigationController viewControllers] objectAtIndex:0];
     addApproachViewController.delegate = self;
+  } else if ([segue.identifier isEqualToString:@"EditApproachViewController"]) {
+    UINavigationController *navigationController = segue.destinationViewController;
+    AddApproachViewController *addApproachViewController = [[navigationController viewControllers] objectAtIndex:0];
+    addApproachViewController.delegate = self;
+    addApproachViewController.approach = sender;
   } else if ([segue.identifier isEqualToString:TIMER_SEGUE]) {
     if ([segue.destinationViewController class] == [TimerViewController class]) {
       TimerViewController *dst = segue.destinationViewController;
@@ -78,6 +111,11 @@ static NSString * const TIMER_SEGUE = @"startTimer";
 
 - (void)addApproachViewController:(AddApproachViewController *)controller didAddApproach:(Approach *)approach {
   [self.training addApproach:approach];
+  [self.table reloadData];
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addApproachViewController:(AddApproachViewController *)controller didEditApproach:(Approach *)approach {
   [self.table reloadData];
   [self dismissViewControllerAnimated:YES completion:nil];
 }

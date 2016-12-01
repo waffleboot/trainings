@@ -13,14 +13,26 @@
 
 @implementation AddApproachViewController
 
+- (void)viewDidLoad {
+  if (self.approach) {
+    self.name.text = self.approach.name;
+    self.navigationItem.title = @"Подход";
+  }
+}
+
 - (void)cancel:(id)sender {
   [self.delegate addApproachViewControllerDidCancel:self];
 }
 
 - (void)done:(id)sender {
-  Approach *approach = [[Approach alloc] init];
-  approach.name = self.name.text;
-  [self.delegate addApproachViewController:self didAddApproach:approach];
+  if (self.approach) {
+    self.approach.name = self.name.text;
+    [self.delegate addApproachViewController:self didEditApproach:self.approach];
+  } else {
+    Approach *approach = [[Approach alloc] init];
+    approach.name = self.name.text;
+    [self.delegate addApproachViewController:self didAddApproach:approach];
+  }
 }
 
 @end

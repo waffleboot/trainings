@@ -20,6 +20,7 @@
     self.name.text = self.training.name;
     self.smallPeriod.text = [NSString stringWithFormat:@"%lu", self.training.smallPeriod];
     self.largePeriod.text = [NSString stringWithFormat:@"%lu", self.training.largePeriod];
+    self.navigationItem.title = @"Тренировка";
   }
 }
 
