@@ -32,6 +32,7 @@
   if (!self.training) {
     [self.name becomeFirstResponder];
   }
+  [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
