@@ -24,18 +24,30 @@
   }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+  [self.view endEditing:YES];
+  [super viewWillDisappear:animated];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  if (textField == self.name) {
+    NSString *text = [self.name.text stringByReplacingCharactersInRange:range withString:string];
+    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    self.navigationItem.rightBarButtonItem.enabled = text.length > 0;
+  }
+  return YES;
+}
+
 - (void)cancel:(id)sender {
-  [self.view.window endEditing:YES];
   [self.delegate addTrainingViewControllerDidCancel:self];
 }
 
 - (void)done:(id)sender {
-  [self.view.window endEditing:YES];
   if (self.training) {
     self.training.name = self.name.text;
     self.training.smallPeriod = [self.smallPeriod.text integerValue];
