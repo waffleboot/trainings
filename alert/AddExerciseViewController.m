@@ -21,12 +21,15 @@
 @end
 
 @interface UIButton (Enable)
+
+@property (nonatomic,getter=isEnabled) BOOL alphaEnable;
+
 @end
 
 @implementation UIButton (Enable)
 
-- (void)setEnabled:(BOOL)enabled {
-  [super setEnabled:enabled];
+- (void)setAlphaEnable:(BOOL)enabled {
+  self.enabled = enabled;
   self.alpha = enabled ? 1.0 : 0.5;
 }
 
@@ -65,9 +68,9 @@
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
   if (self.singleRepeat == textField || self.singleRepeatCount == textField) {
-    self.singleButton.enabled = NO;
+    self.singleButton.alphaEnable = NO;
   } else {
-    self.rangeButton.enabled = NO;
+    self.rangeButton.alphaEnable = NO;
   }
   return YES;
 }
@@ -84,10 +87,8 @@
   } else if (self.rangeRepeatTo == textField) {
     rangeRepeatTo = text;
   }
-  BOOL singleButtonEnabled = singleRepeat.length > 0;
-  BOOL rangeButtonEnabled = rangeRepeatFrom.length > 0 && rangeRepeatTo.length > 0;
-  self.singleButton.enabled = singleButtonEnabled;
-  self.rangeButton.enabled = rangeButtonEnabled;
+  self.singleButton.alphaEnable = singleRepeat.length > 0;
+  self.rangeButton.alphaEnable = rangeRepeatFrom.length > 0 && rangeRepeatTo.length > 0;
   return YES;
 }
 
