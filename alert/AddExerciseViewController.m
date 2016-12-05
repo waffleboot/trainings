@@ -78,4 +78,15 @@
   [self.delegate addExerciseViewControllerDidCancel:self];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITextField *textField;
+  switch (indexPath.section * 10 + indexPath.row) {
+    case 00: textField = self.singleRepeat; break;
+    case 01: textField = self.singleRepeatCount; break;
+    case 10: textField = self.rangeRepeatFrom; break;
+    case 11: textField = self.rangeRepeatTo; break;
+  }
+  [textField becomeFirstResponder];
+}
+
 @end
