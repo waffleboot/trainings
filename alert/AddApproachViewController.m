@@ -1,5 +1,6 @@
 
 #import "AddApproachViewController.h"
+#import "UITextField+AppliedChanges.h"
 #import "DataModel.h"
 
 @interface AddApproachViewController () <UITextFieldDelegate>
@@ -40,11 +41,8 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-  if (textField == self.name) {
-    NSString *text = [self.name.text stringByReplacingCharactersInRange:range withString:string];
-    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    self.navigationItem.rightBarButtonItem.enabled = text.length > 0;
-  }
+  NSString *text = [textField textAfterChangeCharactersInRange:range replacementString:string];
+  self.navigationItem.rightBarButtonItem.enabled = text.length > 0;
   return YES;
 }
 

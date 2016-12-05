@@ -1,5 +1,6 @@
 
 #import "AddTrainingViewController.h"
+#import "UITextField+AppliedChanges.h"
 #import "DataModel.h"
 
 @interface AddTrainingViewController () <UITextFieldDelegate>
@@ -51,8 +52,7 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-  NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
-  text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+  NSString *text = [textField textAfterChangeCharactersInRange:range replacementString:string];
   NSString *name = self.name.text;
   NSString *largePeriod = self.largePeriod.text;
   NSString *smallPeriod = self.smallPeriod.text;
@@ -60,7 +60,7 @@
     name = text;
   } else if (self.largePeriod == textField) {
     largePeriod = text;
-  } else {
+  } else if (self.smallPeriod == textField) {
     smallPeriod = text;
   }
   self.navigationItem.rightBarButtonItem.enabled = name.length > 0 && smallPeriod.length > 0 && largePeriod.length > 0;

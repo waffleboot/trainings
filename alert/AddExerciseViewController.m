@@ -1,7 +1,8 @@
 
 #import "AddExerciseViewController.h"
+#import "UITextField+AppliedChanges.h"
 
-@interface AddExerciseViewController ()
+@interface AddExerciseViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *singleRepeat;
 @property (strong, nonatomic) IBOutlet UITextField *singleRepeatCount;
@@ -9,6 +10,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *rangeRepeatTo;
 @property (strong, nonatomic) IBOutlet UIView *footer1;
 @property (strong, nonatomic) IBOutlet UIView *footer2;
+@property (strong, nonatomic) IBOutlet UIButton *singleButton;
+@property (strong, nonatomic) IBOutlet UIButton *rangeButton;
 
 - (IBAction)addRepeat:(id)sender;
 - (IBAction)addRange:(id)sender;
@@ -17,9 +20,27 @@
 
 @end
 
+@interface UIButton (Enable)
+@end
+
+@implementation UIButton (Enable)
+
+- (void)setEnabled:(BOOL)enabled {
+  [super setEnabled:enabled];
+  self.alpha = enabled ? 1.0 : 0.5;
+}
+
+@end
+
 @implementation AddExerciseViewController
 
 #pragma mark - Table view data source
+
+- (void)viewDidLoad {
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)];
+  tap.cancelsTouchesInView = NO;
+  [self.view addGestureRecognizer:tap];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -35,6 +56,39 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
   return 55;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [self.view endEditing:YES];
+  [super viewWillDisappear:animated];
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+  if (self.singleRepeat == textField || self.singleRepeatCount == textField) {
+    self.singleButton.enabled = NO;
+  } else {
+    self.rangeButton.enabled = NO;
+  }
+  return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  NSString *text = [textField textAfterChangeCharactersInRange:range replacementString:string];
+  NSString *singleRepeat = self.singleRepeat.text;
+  NSString *rangeRepeatFrom = self.rangeRepeatFrom.text;
+  NSString *rangeRepeatTo = self.rangeRepeatTo.text;
+  if (self.singleRepeat == textField) {
+    singleRepeat = text;
+  } else if (self.rangeRepeatFrom == textField) {
+    rangeRepeatFrom = text;
+  } else if (self.rangeRepeatTo == textField) {
+    rangeRepeatTo = text;
+  }
+  BOOL singleButtonEnabled = singleRepeat.length > 0;
+  BOOL rangeButtonEnabled = rangeRepeatFrom.length > 0 && rangeRepeatTo.length > 0;
+  self.singleButton.enabled = singleButtonEnabled;
+  self.rangeButton.enabled = rangeButtonEnabled;
+  return YES;
 }
 
 - (void)addRepeat:(id)sender {

@@ -25,6 +25,7 @@
 		F59068AD1DE5B01B00144593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59068AB1DE5B01B00144593 /* Main.storyboard */; };
 		F59068B01DE5B0D800144593 /* AddApproachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068AF1DE5B0D800144593 /* AddApproachViewController.m */; };
 		F59068B61DE5C4AF00144593 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59068B51DE5C4AF00144593 /* TimerViewController.m */; };
+		F5B699701DF5ABF200A5237B /* UITextField+AppliedChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6996F1DF5ABF200A5237B /* UITextField+AppliedChanges.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		F59068AF1DE5B0D800144593 /* AddApproachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddApproachViewController.m; sourceTree = "<group>"; };
 		F59068B41DE5C4AF00144593 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		F59068B51DE5C4AF00144593 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		F5B6996E1DF5ABF200A5237B /* UITextField+AppliedChanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AppliedChanges.h"; sourceTree = "<group>"; };
+		F5B6996F1DF5ABF200A5237B /* UITextField+AppliedChanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+AppliedChanges.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				F56E57171DEEA743003E250F /* AddExerciseViewController.m */,
 				F533E4F41DF05F8700E1E75F /* EditDoneNavigationItem.h */,
 				F533E4F51DF05F8700E1E75F /* EditDoneNavigationItem.m */,
+				F5B6996E1DF5ABF200A5237B /* UITextField+AppliedChanges.h */,
+				F5B6996F1DF5ABF200A5237B /* UITextField+AppliedChanges.m */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B699701DF5ABF200A5237B /* UITextField+AppliedChanges.m in Sources */,
 				F5690A6F1DE40D4E00D6D505 /* ViewController.m in Sources */,
 				F59068721DE5001900144593 /* MyCellTableViewCell.m in Sources */,
 				F59068AA1DE59D7400144593 /* AddTrainingViewController.m in Sources */,
