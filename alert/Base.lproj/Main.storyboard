@@ -246,21 +246,21 @@
                             <tableViewSection headerTitle="Название тренировки" id="UPQ-E2-b8j">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="86m-Jf-sfb">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86m-Jf-sfb" id="330-4M-NeZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название тренировки" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-nC-4GS" userLabel="name">
-                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="339" height="20"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rCV-nC-4GS" firstAttribute="leading" secondItem="330-4M-NeZ" secondAttribute="leading" constant="20" id="704-Fc-qJ0"/>
+                                                <constraint firstItem="rCV-nC-4GS" firstAttribute="leading" secondItem="330-4M-NeZ" secondAttribute="leading" constant="16" id="704-Fc-qJ0"/>
                                                 <constraint firstAttribute="trailing" secondItem="rCV-nC-4GS" secondAttribute="trailing" constant="20" id="WSw-Su-ioU"/>
                                                 <constraint firstItem="rCV-nC-4GS" firstAttribute="centerY" secondItem="330-4M-NeZ" secondAttribute="centerY" id="iG2-V4-UEB"/>
                                             </constraints>
@@ -271,14 +271,14 @@
                             <tableViewSection headerTitle="Время отдыха" id="zWE-1X-Rmi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s4k-ab-GzV">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4k-ab-GzV" id="GUZ-XB-Q5f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-U5-qZD">
-                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между кругами (сек)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwa-rD-HTI">
                                                             <rect key="frame" x="0.0" y="0.0" width="194" height="20"/>
@@ -287,7 +287,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oau-Xb-IcO">
-                                                            <rect key="frame" x="202" y="0.0" width="133" height="20"/>
+                                                            <rect key="frame" x="202" y="0.0" width="137" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -298,19 +298,19 @@
                                             <constraints>
                                                 <constraint firstItem="yB3-U5-qZD" firstAttribute="centerY" secondItem="GUZ-XB-Q5f" secondAttribute="centerY" id="0Ag-f5-Xjz"/>
                                                 <constraint firstAttribute="trailing" secondItem="yB3-U5-qZD" secondAttribute="trailing" constant="20" id="O6v-w2-HnZ"/>
-                                                <constraint firstItem="yB3-U5-qZD" firstAttribute="leading" secondItem="GUZ-XB-Q5f" secondAttribute="leading" constant="20" id="hzo-sK-A2k"/>
+                                                <constraint firstItem="yB3-U5-qZD" firstAttribute="leading" secondItem="GUZ-XB-Q5f" secondAttribute="leading" constant="16" id="hzo-sK-A2k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="D6s-Kt-jfr">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D6s-Kt-jfr" id="ZEE-yb-b0L">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-HN-yTI">
-                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отдых между подходами (сек)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-0t-A5K">
                                                             <rect key="frame" x="0.0" y="0.0" width="214.5" height="20"/>
@@ -319,7 +319,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-Wk-slB">
-                                                            <rect key="frame" x="222.5" y="0.0" width="112.5" height="20"/>
+                                                            <rect key="frame" x="222.5" y="0.0" width="116.5" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -330,7 +330,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="PL5-HN-yTI" secondAttribute="trailing" constant="20" id="BoG-qf-81a"/>
                                                 <constraint firstItem="PL5-HN-yTI" firstAttribute="centerY" secondItem="ZEE-yb-b0L" secondAttribute="centerY" id="cp8-rc-2M3"/>
-                                                <constraint firstItem="PL5-HN-yTI" firstAttribute="leading" secondItem="ZEE-yb-b0L" secondAttribute="leading" constant="20" id="dFh-SU-m5f"/>
+                                                <constraint firstItem="PL5-HN-yTI" firstAttribute="leading" secondItem="ZEE-yb-b0L" secondAttribute="leading" constant="16" id="dFh-SU-m5f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -538,14 +538,14 @@
                             <tableViewSection headerTitle="НЕСКОЛЬКО ПОВТОРЕНИЙ" id="cfy-Ey-CpE" userLabel="повторения">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bFu-Ll-xJH" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bFu-Ll-xJH" id="Te3-el-rbF" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S1p-RT-nko" userLabel="stack">
-                                                    <rect key="frame" x="20" y="17" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="17" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-I1-HZ3">
                                                             <rect key="frame" x="0.0" y="0.0" width="83.5" height="20"/>
@@ -554,7 +554,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-Or-U0M">
-                                                            <rect key="frame" x="91.5" y="0.0" width="243.5" height="20"/>
+                                                            <rect key="frame" x="91.5" y="0.0" width="247.5" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -565,19 +565,19 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="S1p-RT-nko" secondAttribute="trailing" constant="20" id="3Wj-fI-hRI"/>
                                                 <constraint firstItem="S1p-RT-nko" firstAttribute="centerY" secondItem="Te3-el-rbF" secondAttribute="centerY" id="fjf-fq-E6k"/>
-                                                <constraint firstItem="S1p-RT-nko" firstAttribute="leading" secondItem="Te3-el-rbF" secondAttribute="leading" constant="20" id="h95-s1-76i"/>
+                                                <constraint firstItem="S1p-RT-nko" firstAttribute="leading" secondItem="Te3-el-rbF" secondAttribute="leading" constant="16" id="h95-s1-76i"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MXF-au-FOA" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="110.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="111" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MXF-au-FOA" id="xCJ-Jw-3ev" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ewj-3c-caT" userLabel="stack">
-                                                    <rect key="frame" x="20" y="18" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="18" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сколько раз добавить" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iT-Sr-eug">
                                                             <rect key="frame" x="0.0" y="0.0" width="159" height="20"/>
@@ -586,7 +586,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dox-28-4jb">
-                                                            <rect key="frame" x="167" y="0.0" width="168" height="20"/>
+                                                            <rect key="frame" x="167" y="0.0" width="172" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -597,7 +597,7 @@
                                             <constraints>
                                                 <constraint firstItem="Ewj-3c-caT" firstAttribute="centerY" secondItem="xCJ-Jw-3ev" secondAttribute="centerY" id="331-UK-qqq"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ewj-3c-caT" secondAttribute="trailing" constant="20" id="WuT-Vl-yoF"/>
-                                                <constraint firstItem="Ewj-3c-caT" firstAttribute="leading" secondItem="xCJ-Jw-3ev" secondAttribute="leading" constant="20" id="efa-Wh-XNj"/>
+                                                <constraint firstItem="Ewj-3c-caT" firstAttribute="leading" secondItem="xCJ-Jw-3ev" secondAttribute="leading" constant="16" id="efa-Wh-XNj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -606,14 +606,14 @@
                             <tableViewSection headerTitle="ДИАПАЗОН ПОВТОРЕНИЙ" id="B7W-WX-390" userLabel="диапазон">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zgn-tz-5OL" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="221.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="222" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgn-tz-5OL" id="Zab-Fl-nia" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HJQ-Qr-1Ru" userLabel="stack">
-                                                    <rect key="frame" x="20" y="18" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="18" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="От" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEs-4Y-Lxx">
                                                             <rect key="frame" x="0.0" y="1.5" width="18.5" height="17.5"/>
@@ -622,7 +622,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1D-0b-nt5">
-                                                            <rect key="frame" x="26.5" y="0.0" width="308.5" height="20"/>
+                                                            <rect key="frame" x="26.5" y="0.0" width="312.5" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -632,20 +632,20 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="HJQ-Qr-1Ru" secondAttribute="trailing" constant="20" id="Dzl-aS-LDs"/>
-                                                <constraint firstItem="HJQ-Qr-1Ru" firstAttribute="leading" secondItem="Zab-Fl-nia" secondAttribute="leading" constant="20" id="LQ4-ag-HTR"/>
+                                                <constraint firstItem="HJQ-Qr-1Ru" firstAttribute="leading" secondItem="Zab-Fl-nia" secondAttribute="leading" constant="16" id="LQ4-ag-HTR"/>
                                                 <constraint firstItem="HJQ-Qr-1Ru" firstAttribute="centerY" secondItem="Zab-Fl-nia" secondAttribute="centerY" id="j1v-tw-A9O"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZKW-gA-31g" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="276.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="277" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKW-gA-31g" id="w04-gN-fqz" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ohr-PG-4Da" userLabel="stack">
-                                                    <rect key="frame" x="20" y="18" width="335" height="20"/>
+                                                    <rect key="frame" x="16" y="18" width="339" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="До" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-0i-mwK">
                                                             <rect key="frame" x="0.0" y="1.5" width="20" height="17.5"/>
@@ -654,7 +654,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYx-Jv-9a5">
-                                                            <rect key="frame" x="28" y="0.0" width="307" height="20"/>
+                                                            <rect key="frame" x="28" y="0.0" width="311" height="20"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -663,7 +663,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ohr-PG-4Da" firstAttribute="leading" secondItem="w04-gN-fqz" secondAttribute="leading" constant="20" id="8x1-2S-eWB"/>
+                                                <constraint firstItem="ohr-PG-4Da" firstAttribute="leading" secondItem="w04-gN-fqz" secondAttribute="leading" constant="16" id="8x1-2S-eWB"/>
                                                 <constraint firstItem="ohr-PG-4Da" firstAttribute="centerY" secondItem="w04-gN-fqz" secondAttribute="centerY" id="JRb-eW-9LR"/>
                                                 <constraint firstAttribute="trailing" secondItem="ohr-PG-4Da" secondAttribute="trailing" constant="20" id="Srk-Tw-76p"/>
                                             </constraints>
@@ -674,7 +674,7 @@
                             <tableViewSection id="OXy-zh-5ew" userLabel="footer">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m0n-0o-gTi" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="367.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="368" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0n-0o-gTi" id="7Ne-aT-C6l" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
@@ -702,7 +702,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YWI-Nl-RMe" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="422.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="423" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YWI-Nl-RMe" id="Zxg-Iq-hL1" userLabel="content">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
@@ -762,7 +762,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gE-cI-6fR" userLabel="start" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="95E-gF-DBv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="95E-gF-DBv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -780,7 +780,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgY-9i-QTJ" userLabel="add training" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="MS9-nT-vTs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="MS9-nT-vTs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -798,7 +798,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PqQ-K2-UTq" userLabel="add exercise" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="95A-5G-Gjs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="95A-5G-Gjs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -816,7 +816,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PcF-4Z-4Mi" userLabel="add approach" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="EcN-jO-Cxe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="EcN-jO-Cxe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
