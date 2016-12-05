@@ -2,7 +2,7 @@
 #import "AddApproachViewController.h"
 #import "DataModel.h"
 
-@interface AddApproachViewController () <UITextViewDelegate>
+@interface AddApproachViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 
@@ -34,6 +34,11 @@
   [super viewWillDisappear:animated];
 }
 
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+  self.navigationItem.rightBarButtonItem.enabled = NO;
+  return YES;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
   if (textField == self.name) {
     NSString *text = [self.name.text stringByReplacingCharactersInRange:range withString:string];
@@ -56,6 +61,10 @@
     approach.name = self.name.text;
     [self.delegate addApproachViewController:self didAddApproach:approach];
   }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self.name becomeFirstResponder];
 }
 
 @end
