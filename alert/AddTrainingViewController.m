@@ -2,7 +2,7 @@
 #import "AddTrainingViewController.h"
 #import "DataModel.h"
 
-@interface AddTrainingViewController ()
+@interface AddTrainingViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *largePeriod;
@@ -24,11 +24,18 @@
   }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
+  return YES;
+}
+
 - (void)cancel:(id)sender {
+  [self.view.window endEditing:YES];
   [self.delegate addTrainingViewControllerDidCancel:self];
 }
 
 - (void)done:(id)sender {
+  [self.view.window endEditing:YES];
   if (self.training) {
     self.training.name = self.name.text;
     self.training.smallPeriod = [self.smallPeriod.text integerValue];
@@ -40,6 +47,16 @@
     training.smallPeriod = [self.smallPeriod.text integerValue];
     training.largePeriod = [self.largePeriod.text integerValue];
     [self.delegate addTrainingViewController:self didAddTraining:training];
+  }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == 0) {
+    [self.name becomeFirstResponder];
+  } else if (indexPath.row == 0) {
+    [self.largePeriod becomeFirstResponder];
+  } else {
+    [self.smallPeriod becomeFirstResponder];
   }
 }
 
