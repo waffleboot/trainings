@@ -16,11 +16,21 @@
 @implementation AddTrainingViewController
 
 - (void)viewDidLoad {
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)];
+  tap.cancelsTouchesInView = NO;
+  [self.view addGestureRecognizer:tap];
   if (self.training) {
     self.name.text = self.training.name;
     self.smallPeriod.text = [NSString stringWithFormat:@"%lu", self.training.smallPeriod];
     self.largePeriod.text = [NSString stringWithFormat:@"%lu", self.training.largePeriod];
     self.navigationItem.title = @"Тренировка";
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+  }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  if (!self.training) {
+    [self.name becomeFirstResponder];
   }
 }
 

@@ -357,7 +357,7 @@
                                 <action selector="cancel:" destination="VcF-Tv-PVi" id="kfa-bs-Elw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="oc0-Qr-Fr5">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="oc0-Qr-Fr5">
                             <connections>
                                 <action selector="done:" destination="VcF-Tv-PVi" id="8iy-p1-hE2"/>
                             </connections>
