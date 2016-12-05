@@ -2,7 +2,7 @@
 #import "AddApproachViewController.h"
 #import "DataModel.h"
 
-@interface AddApproachViewController ()
+@interface AddApproachViewController () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 
@@ -14,10 +14,33 @@
 @implementation AddApproachViewController
 
 - (void)viewDidLoad {
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)];
+  tap.cancelsTouchesInView = NO;
+  [self.view addGestureRecognizer:tap];
   if (self.approach) {
     self.name.text = self.approach.name;
     self.navigationItem.title = @"Подход";
+    self.navigationItem.rightBarButtonItem.enabled = YES;
   }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [self.name becomeFirstResponder];
+  [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [self.view endEditing:YES];
+  [super viewWillDisappear:animated];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  if (textField == self.name) {
+    NSString *text = [self.name.text stringByReplacingCharactersInRange:range withString:string];
+    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    self.navigationItem.rightBarButtonItem.enabled = text.length > 0;
+  }
+  return YES;
 }
 
 - (void)cancel:(id)sender {

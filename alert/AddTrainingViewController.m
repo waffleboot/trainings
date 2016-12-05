@@ -45,12 +45,25 @@
   return YES;
 }
 
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+  self.navigationItem.rightBarButtonItem.enabled = NO;
+  return YES;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-  if (textField == self.name) {
-    NSString *text = [self.name.text stringByReplacingCharactersInRange:range withString:string];
-    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    self.navigationItem.rightBarButtonItem.enabled = text.length > 0;
+  NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+  text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+  NSString *name = self.name.text;
+  NSString *largePeriod = self.largePeriod.text;
+  NSString *smallPeriod = self.smallPeriod.text;
+  if (self.name == textField) {
+    name = text;
+  } else if (self.largePeriod == textField) {
+    largePeriod = text;
+  } else {
+    smallPeriod = text;
   }
+  self.navigationItem.rightBarButtonItem.enabled = name.length > 0 && smallPeriod.length > 0 && largePeriod.length > 0;
   return YES;
 }
 
