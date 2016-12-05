@@ -35,6 +35,11 @@
   [super viewWillDisappear:animated];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [self done:nil];
+  return YES;
+}
+
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
   self.navigationItem.rightBarButtonItem.enabled = NO;
   return YES;
